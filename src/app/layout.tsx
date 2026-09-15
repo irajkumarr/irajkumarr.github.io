@@ -62,11 +62,21 @@ export const metadata: Metadata = {
     title: `${PORTFOLIO_DATA.personal.name} | ${PORTFOLIO_DATA.personal.headline}`,
     description: PORTFOLIO_DATA.personal.bio,
     siteName: `${PORTFOLIO_DATA.personal.name} Portfolio`,
+    images: [
+      {
+        url: "/og-image.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Raj Kumar Timalsina | Full Stack Mobile & Flutter Developer Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${PORTFOLIO_DATA.personal.name} | ${PORTFOLIO_DATA.personal.headline}`,
     description: PORTFOLIO_DATA.personal.bio,
+    images: ["/og-image.jpeg"],
+    creator: "@irajkumarr_",
   },
   robots: {
     index: true,
@@ -80,7 +90,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
