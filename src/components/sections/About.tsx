@@ -1,4 +1,14 @@
-import { CheckCircle2, GraduationCap, MapPin, Briefcase, Sparkles, Terminal, Shield, Layers, Zap } from "lucide-react";
+import {
+  CheckCircle2,
+  GraduationCap,
+  MapPin,
+  Briefcase,
+  Sparkles,
+  Terminal,
+  Shield,
+  Layers,
+  Zap,
+} from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
 import { SectionContainer } from "../layout/SectionContainer";
 import { SectionHeading } from "../ui/SectionHeading";
@@ -36,7 +46,9 @@ export function About() {
               </div>
               <div className="text-xs">
                 <p className="text-muted-foreground font-mono">Location</p>
-                <p className="font-semibold text-foreground text-sm">{PORTFOLIO_DATA.personal.location}</p>
+                <p className="font-semibold text-foreground text-sm">
+                  {PORTFOLIO_DATA.personal.location}
+                </p>
               </div>
             </div>
 
@@ -46,7 +58,9 @@ export function About() {
               </div>
               <div className="text-xs">
                 <p className="text-muted-foreground font-mono">Education</p>
-                <p className="font-semibold text-foreground text-sm">B.Sc. CSIT (Tribhuvan Univ.)</p>
+                <p className="font-semibold text-foreground text-sm">
+                  B.Sc. CSIT (Tribhuvan Univ.)
+                </p>
               </div>
             </div>
 
@@ -56,7 +70,9 @@ export function About() {
               </div>
               <div className="text-xs">
                 <p className="text-muted-foreground font-mono">Experience</p>
-                <p className="font-semibold text-foreground text-sm">Supreme IT Solutions</p>
+                <p className="font-semibold text-foreground text-sm">
+                  Supreme IT Solutions
+                </p>
               </div>
             </div>
 
@@ -65,8 +81,12 @@ export function About() {
                 <Zap className="w-4 h-4" />
               </div>
               <div className="text-xs">
-                <p className="text-muted-foreground font-mono">Specialization</p>
-                <p className="font-semibold text-foreground text-sm">Flutter & REST Backends</p>
+                <p className="text-muted-foreground font-mono">
+                  Specialization
+                </p>
+                <p className="font-semibold text-foreground text-sm">
+                  Flutter & REST Backends
+                </p>
               </div>
             </div>
           </div>
@@ -74,7 +94,10 @@ export function About() {
 
         {/* Right Column: Core Architectural Strengths Bento */}
         <div className="lg:col-span-5 space-y-4">
-          <Card glow className="bg-surface/85 border-surface-border p-6 space-y-5">
+          <Card
+            glow
+            className="bg-surface/85 border-surface-border p-6 space-y-5"
+          >
             <div className="flex items-center justify-between pb-3 border-b border-surface-border/60">
               <div className="flex items-center gap-2">
                 <div className="p-1.5 rounded-md bg-accent/10 text-accent">
@@ -84,9 +107,9 @@ export function About() {
                   Core Engineering Strengths
                 </h4>
               </div>
-              <span className="text-[10px] font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">
+              {/* <span className="text-[10px] font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">
                 Verified
-              </span>
+              </span> */}
             </div>
 
             <ul className="space-y-3">
@@ -103,7 +126,8 @@ export function About() {
 
             <div className="pt-4 border-t border-surface-border/60 flex items-center justify-between text-xs font-mono text-muted-foreground">
               <span className="flex items-center gap-1.5">
-                <Shield className="w-3.5 h-3.5 text-accent" /> Clean Code & Patterns
+                <Shield className="w-3.5 h-3.5 text-accent" /> Clean Code &
+                Patterns
               </span>
               <span className="flex items-center gap-1.5">
                 <Layers className="w-3.5 h-3.5 text-accent" /> High Performance

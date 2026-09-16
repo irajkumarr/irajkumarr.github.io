@@ -208,7 +208,7 @@ export const PORTFOLIO_DATA = {
       skills: [
         { name: "Dart", level: "Advanced" },
         { name: "JavaScript", level: "Advanced" },
-        { name: "TypeScript", level: "Proficient" },
+        { name: "TypeScript", level: "Advanced" },
       ],
     },
     {
@@ -217,8 +217,8 @@ export const PORTFOLIO_DATA = {
       skills: [
         { name: "Flutter", level: "Advanced" },
         { name: "Node.js", level: "Advanced" },
-        { name: "Express.js", level: "Proficient" },
-        { name: "Nest.js", level: "Proficient" },
+        { name: "Express.js", level: "Advanced" },
+        { name: "Nest.js", level: "Advanced" },
       ],
     },
     {

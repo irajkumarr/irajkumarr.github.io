@@ -240,9 +240,9 @@ export function Hero() {
 
                 {activeTab === "backend" && (
                   <div className="space-y-1 text-muted-foreground">
-                    <p className="text-purple-400">// Node.js & Express JWT Protected Pipeline</p>
+                    <p className="text-purple-400">// High-Performance Job Discovery & Compound Search Pipeline</p>
                     <p className="text-foreground/90">
-                      <span className="text-sky-500">router</span>.post(<span className="text-emerald-300">&apos;/api/v1/courses/enroll&apos;</span>,
+                      <span className="text-sky-500">router</span>.get(<span className="text-emerald-300">&apos;/api/v1/jobs/search&apos;</span>,
                     </p>
                     <p className="pl-4 text-foreground/80">
                       verifyJwtSession,
@@ -251,20 +251,34 @@ export function Hero() {
                       <span className="text-sky-500">async</span> (req: AuthenticatedRequest, res: Response) =&gt; &#123;
                     </p>
                     <p className="pl-8 text-foreground/80">
-                      <span className="text-sky-500">const</span> &#123; courseId, paymentToken &#125; = req.body;
+                      <span className="text-sky-500">const</span> &#123; query, category, location, page = 1 &#125; = req.query;
+                    </p>
+                    <p className="pl-8 pt-0.5 text-muted-foreground/70">
+                      <span className="text-purple-400">// MongoDB Compound Indexed Query Execution</span>
                     </p>
                     <p className="pl-8 text-foreground/80">
-                      <span className="text-sky-500">const</span> enrollment = <span className="text-sky-500">await</span> courseService.processStripeCheckout(&#123;
+                      <span className="text-sky-500">const</span> results = <span className="text-sky-500">await</span> JobModel.find(&#123;
                     </p>
-                    <p className="pl-12 text-muted-foreground">
-                      userId: req.user.id, courseId, paymentToken
+                    <p className="pl-12 text-foreground/80">
+                      status: <span className="text-emerald-300">&apos;ACTIVE&apos;</span>,
                     </p>
-                    <p className="pl-8 text-foreground/80">&#125;);</p>
+                    <p className="pl-12 text-foreground/80">
+                      ...(category &amp;&amp; &#123; category &#125;),
+                    </p>
+                    <p className="pl-12 text-foreground/80">
+                      $text: &#123; $search: String(query) &#125;,
+                    </p>
                     <p className="pl-8 text-foreground/80">
-                      <span className="text-sky-500">await</span> fcmNotification.dispatch(enrollment.receipt);
+                      &#125;)
                     </p>
-                    <p className="pl-8 text-foreground/80">
-                      <span className="text-sky-500">return</span> res.status(200).json(&#123; success: <span className="text-amber-400">true</span>, enrollment &#125;);
+                    <p className="pl-12 text-foreground/80">
+                      .sort(&#123; score: &#123; $meta: <span className="text-emerald-300">&apos;textScore&apos;</span> &#125;, createdAt: -1 &#125;)
+                    </p>
+                    <p className="pl-12 text-foreground/80">
+                      .skip((+page - 1) * 20).limit(20).lean();
+                    </p>
+                    <p className="pl-8 pt-0.5 text-foreground/80">
+                      <span className="text-sky-500">return</span> res.status(200).json(&#123; success: <span className="text-amber-400">true</span>, count: results.length, jobs: results &#125;);
                     </p>
                     <p className="pl-4 text-foreground/80">&#125;
                     </p>
