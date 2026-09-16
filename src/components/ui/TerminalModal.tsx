@@ -505,14 +505,14 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
           isExpanded ? "max-w-5xl h-[85vh]" : "max-w-3xl h-[560px] max-h-[85vh]"
         }`}
       >
-        {/* Windows Terminal Title Bar */}
+        {/* Terminal Title Bar */}
         <div className="px-4 py-3 bg-surface-hover border-b border-surface-border flex items-center justify-between select-none shrink-0">
           <div className="flex items-center gap-2.5">
             <div className="p-1 rounded-md bg-accent/15 text-accent">
               <TerminalIcon className="w-4 h-4" />
             </div>
             <span className="text-xs font-semibold text-foreground/90 tracking-tight">
-              Raj Kumar Timalsina — Windows Developer Terminal
+              Raj Kumar Timalsina — Developer Terminal
             </span>
           </div>
 
