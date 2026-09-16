@@ -50,9 +50,9 @@ export function Hero() {
                 <span>Mobile & Backend Engineer</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
+              <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-[-0.03em] text-foreground leading-[1.08]">
                 Hi, I&apos;m{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground via-foreground/90 to-accent">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground via-foreground/90 to-accent drop-shadow-xs">
                   {PORTFOLIO_DATA.personal.name}
                 </span>
               </h1>
