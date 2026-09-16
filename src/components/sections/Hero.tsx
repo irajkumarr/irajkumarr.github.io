@@ -19,10 +19,15 @@ import { Button } from "../ui/Button";
 import { Badge } from "../ui/Badge";
 
 export function Hero() {
-  const [activeTab, setActiveTab] = useState<"flutter" | "backend" | "architecture">("flutter");
+  const [activeTab, setActiveTab] = useState<
+    "flutter" | "backend" | "architecture"
+  >("flutter");
 
   return (
-    <section id="top" className="pt-28 pb-16 sm:pt-36 sm:pb-24 overflow-hidden relative">
+    <section
+      id="top"
+      className="pt-28 pb-16 sm:pt-36 sm:pb-24 overflow-hidden relative"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column: Headline, Bio, Pillars, CTAs */}
@@ -52,7 +57,7 @@ export function Hero() {
                 </span>
               </h1>
 
-              <p className="text-lg sm:text-xl font-medium text-foreground/85 tracking-tight pt-1">
+              <p className="text-lg sm:text-xl font-medium font-mono text-foreground/85 tracking-tight pt-1">
                 {PORTFOLIO_DATA.personal.headline}
               </p>
 
@@ -67,24 +72,36 @@ export function Hero() {
                 <span className="text-xs font-mono text-accent font-semibold flex items-center gap-1">
                   <Smartphone className="w-3.5 h-3.5" /> Flutter
                 </span>
-                <span className="text-xs font-medium text-foreground mt-1">Cross-Platform</span>
-                <span className="text-[10px] text-muted-foreground font-mono">BLoC • Riverpod</span>
+                <span className="text-xs font-medium text-foreground mt-1">
+                  Cross-Platform
+                </span>
+                <span className="text-[10px] text-muted-foreground font-mono">
+                  BLoC • Riverpod
+                </span>
               </div>
 
               <div className="flex flex-col p-3 rounded-xl border border-surface-border bg-surface/60 backdrop-blur-xs">
                 <span className="text-xs font-mono text-accent font-semibold flex items-center gap-1">
                   <Server className="w-3.5 h-3.5" /> Backend
                 </span>
-                <span className="text-xs font-medium text-foreground mt-1">REST APIs</span>
-                <span className="text-[10px] text-muted-foreground font-mono">Node • Express</span>
+                <span className="text-xs font-medium text-foreground mt-1">
+                  REST APIs
+                </span>
+                <span className="text-[10px] text-muted-foreground font-mono">
+                  Node • Express
+                </span>
               </div>
 
               <div className="flex flex-col p-3 rounded-xl border border-surface-border bg-surface/60 backdrop-blur-xs">
                 <span className="text-xs font-mono text-accent font-semibold flex items-center gap-1">
                   <Layers className="w-3.5 h-3.5" /> Standards
                 </span>
-                <span className="text-xs font-medium text-foreground mt-1">Clean Arch</span>
-                <span className="text-[10px] text-muted-foreground font-mono">B.Sc. CSIT (TU)</span>
+                <span className="text-xs font-medium text-foreground mt-1">
+                  Clean Arch
+                </span>
+                <span className="text-[10px] text-muted-foreground font-mono">
+                  B.Sc. CSIT (TU)
+                </span>
               </div>
             </div>
 
@@ -97,7 +114,10 @@ export function Hero() {
                 </Button>
               </a>
 
-              <a href={PORTFOLIO_DATA.personal.resumeUrl} download="Raj_Kumar_Timalsina_Resume.pdf">
+              <a
+                href={PORTFOLIO_DATA.personal.resumeUrl}
+                download="Raj_Kumar_Timalsina_Resume.pdf"
+              >
                 <Button variant="secondary" size="lg">
                   <Download className="w-4 h-4 text-accent" />
                   <span>Download Resume</span>
@@ -124,12 +144,19 @@ export function Hero() {
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
                 >
-                  <Button variant="outline" size="icon" title="LinkedIn Profile">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    title="LinkedIn Profile"
+                  >
                     <Linkedin className="w-4 h-4" />
                   </Button>
                 </a>
 
-                <a href={`mailto:${PORTFOLIO_DATA.personal.email}`} aria-label="Email">
+                <a
+                  href={`mailto:${PORTFOLIO_DATA.personal.email}`}
+                  aria-label="Email"
+                >
                   <Button variant="outline" size="icon" title="Send Email">
                     <Mail className="w-4 h-4" />
                   </Button>
@@ -206,31 +233,45 @@ export function Hero() {
                       <span className="text-sky-500">class</span>{" "}
                       <span className="text-amber-400">AuthBloc</span>{" "}
                       <span className="text-sky-500">extends</span>{" "}
-                      <span className="text-emerald-400">Bloc&lt;AuthEvent, AuthState&gt;</span> &#123;
+                      <span className="text-emerald-400">
+                        Bloc&lt;AuthEvent, AuthState&gt;
+                      </span>{" "}
+                      &#123;
                     </p>
                     <p className="pl-4 text-foreground/80">
-                      <span className="text-sky-500">final</span> AuthRepository _authRepo;
+                      <span className="text-sky-500">final</span> AuthRepository
+                      _authRepo;
                     </p>
                     <p className="pl-4 pt-1 text-muted-foreground/70">
-                      <span className="text-purple-400">// Clean Architecture Event Handler</span>
+                      <span className="text-purple-400">
+                        // Clean Architecture Event Handler
+                      </span>
                     </p>
                     <p className="pl-4 text-foreground/80">
-                      on&lt;<span className="text-amber-300">LoginSubmitted</span>&gt;((event, emit) <span className="text-sky-500">async</span> &#123;
+                      on&lt;
+                      <span className="text-amber-300">LoginSubmitted</span>
+                      &gt;((event, emit){" "}
+                      <span className="text-sky-500">async</span> &#123;
                     </p>
                     <p className="pl-8 text-foreground/80">
-                      emit(<span className="text-amber-400">AuthLoading</span>());
+                      emit(<span className="text-amber-400">AuthLoading</span>
+                      ());
                     </p>
                     <p className="pl-8 text-foreground/80">
-                      <span className="text-sky-500">final</span> result = <span className="text-sky-500">await</span> _authRepo.authenticate(event.credentials);
+                      <span className="text-sky-500">final</span> result ={" "}
+                      <span className="text-sky-500">await</span>{" "}
+                      _authRepo.authenticate(event.credentials);
                     </p>
-                    <p className="pl-8 text-foreground/80">
-                      result.fold(
+                    <p className="pl-8 text-foreground/80">result.fold(</p>
+                    <p className="pl-12 text-foreground/80">
+                      (failure) =&gt; emit(
+                      <span className="text-rose-400">AuthFailure</span>
+                      (failure.message)),
                     </p>
                     <p className="pl-12 text-foreground/80">
-                      (failure) =&gt; emit(<span className="text-rose-400">AuthFailure</span>(failure.message)),
-                    </p>
-                    <p className="pl-12 text-foreground/80">
-                      (user) =&gt; emit(<span className="text-emerald-400">AuthSuccess</span>(user: user)),
+                      (user) =&gt; emit(
+                      <span className="text-emerald-400">AuthSuccess</span>
+                      (user: user)),
                     </p>
                     <p className="pl-8 text-foreground/80">&#41;;</p>
                     <p className="pl-4 text-foreground/80">&#125;);</p>
@@ -240,27 +281,42 @@ export function Hero() {
 
                 {activeTab === "backend" && (
                   <div className="space-y-1 text-muted-foreground">
-                    <p className="text-purple-400">// High-Performance Job Discovery & Compound Search Pipeline</p>
+                    <p className="text-purple-400">
+                      // High-Performance Job Discovery & Compound Search
+                      Pipeline
+                    </p>
                     <p className="text-foreground/90">
-                      <span className="text-sky-500">router</span>.get(<span className="text-emerald-300">&apos;/api/v1/jobs/search&apos;</span>,
+                      <span className="text-sky-500">router</span>.get(
+                      <span className="text-emerald-300">
+                        &apos;/api/v1/jobs/search&apos;
+                      </span>
+                      ,
                     </p>
+                    <p className="pl-4 text-foreground/80">verifyJwtSession,</p>
                     <p className="pl-4 text-foreground/80">
-                      verifyJwtSession,
-                    </p>
-                    <p className="pl-4 text-foreground/80">
-                      <span className="text-sky-500">async</span> (req: AuthenticatedRequest, res: Response) =&gt; &#123;
+                      <span className="text-sky-500">async</span> (req:
+                      AuthenticatedRequest, res: Response) =&gt; &#123;
                     </p>
                     <p className="pl-8 text-foreground/80">
-                      <span className="text-sky-500">const</span> &#123; query, category, location, page = 1 &#125; = req.query;
+                      <span className="text-sky-500">const</span> &#123; query,
+                      category, location, page = 1 &#125; = req.query;
                     </p>
                     <p className="pl-8 pt-0.5 text-muted-foreground/70">
-                      <span className="text-purple-400">// MongoDB Compound Indexed Query Execution</span>
+                      <span className="text-purple-400">
+                        // MongoDB Compound Indexed Query Execution
+                      </span>
                     </p>
                     <p className="pl-8 text-foreground/80">
-                      <span className="text-sky-500">const</span> results = <span className="text-sky-500">await</span> JobModel.find(&#123;
+                      <span className="text-sky-500">const</span> results ={" "}
+                      <span className="text-sky-500">await</span>{" "}
+                      JobModel.find(&#123;
                     </p>
                     <p className="pl-12 text-foreground/80">
-                      status: <span className="text-emerald-300">&apos;ACTIVE&apos;</span>,
+                      status:{" "}
+                      <span className="text-emerald-300">
+                        &apos;ACTIVE&apos;
+                      </span>
+                      ,
                     </p>
                     <p className="pl-12 text-foreground/80">
                       ...(category &amp;&amp; &#123; category &#125;),
@@ -268,34 +324,60 @@ export function Hero() {
                     <p className="pl-12 text-foreground/80">
                       $text: &#123; $search: String(query) &#125;,
                     </p>
-                    <p className="pl-8 text-foreground/80">
-                      &#125;)
-                    </p>
+                    <p className="pl-8 text-foreground/80">&#125;)</p>
                     <p className="pl-12 text-foreground/80">
-                      .sort(&#123; score: &#123; $meta: <span className="text-emerald-300">&apos;textScore&apos;</span> &#125;, createdAt: -1 &#125;)
+                      .sort(&#123; score: &#123; $meta:{" "}
+                      <span className="text-emerald-300">
+                        &apos;textScore&apos;
+                      </span>{" "}
+                      &#125;, createdAt: -1 &#125;)
                     </p>
                     <p className="pl-12 text-foreground/80">
                       .skip((+page - 1) * 20).limit(20).lean();
                     </p>
                     <p className="pl-8 pt-0.5 text-foreground/80">
-                      <span className="text-sky-500">return</span> res.status(200).json(&#123; success: <span className="text-amber-400">true</span>, count: results.length, jobs: results &#125;);
+                      <span className="text-sky-500">return</span>{" "}
+                      res.status(200).json(&#123; success:{" "}
+                      <span className="text-amber-400">true</span>, count:
+                      results.length, jobs: results &#125;);
                     </p>
-                    <p className="pl-4 text-foreground/80">&#125;
-                    </p>
+                    <p className="pl-4 text-foreground/80">&#125;</p>
                     <p className="text-foreground/90">&#41;;</p>
                   </div>
                 )}
 
                 {activeTab === "architecture" && (
                   <div className="space-y-1 text-muted-foreground">
-                    <p className="text-purple-400"># Clean Architecture Layer Isolation</p>
-                    <p className="text-foreground/90"><span className="text-sky-400">layers</span>:</p>
-                    <p className="pl-4 text-foreground/80"><span className="text-amber-400">presentation</span>: Flutter UI, BLoC / Riverpod State</p>
-                    <p className="pl-4 text-foreground/80"><span className="text-amber-400">domain</span>: Use Cases, Entities, Contract Repositories</p>
-                    <p className="pl-4 text-foreground/80"><span className="text-amber-400">data</span>: REST Dio Models, Remote / Local Data Sources</p>
-                    <p className="pl-4 text-foreground/80"><span className="text-amber-400">backend</span>: Node.js, Express, MongoDB Indexing</p>
-                    <p className="pt-2 text-foreground/90"><span className="text-sky-400">testing</span>: Unit, Integration, Mockito</p>
-                    <p className="text-foreground/90"><span className="text-sky-400">pipeline</span>: GitHub Actions &bull; Fastlane release build</p>
+                    <p className="text-purple-400">
+                      # Clean Architecture Layer Isolation
+                    </p>
+                    <p className="text-foreground/90">
+                      <span className="text-sky-400">layers</span>:
+                    </p>
+                    <p className="pl-4 text-foreground/80">
+                      <span className="text-amber-400">presentation</span>:
+                      Flutter UI, BLoC / Riverpod State
+                    </p>
+                    <p className="pl-4 text-foreground/80">
+                      <span className="text-amber-400">domain</span>: Use Cases,
+                      Entities, Contract Repositories
+                    </p>
+                    <p className="pl-4 text-foreground/80">
+                      <span className="text-amber-400">data</span>: REST Dio
+                      Models, Remote / Local Data Sources
+                    </p>
+                    <p className="pl-4 text-foreground/80">
+                      <span className="text-amber-400">backend</span>: Node.js,
+                      Express, MongoDB Indexing
+                    </p>
+                    <p className="pt-2 text-foreground/90">
+                      <span className="text-sky-400">testing</span>: Unit,
+                      Integration, Mockito
+                    </p>
+                    <p className="text-foreground/90">
+                      <span className="text-sky-400">pipeline</span>: GitHub
+                      Actions &bull; Fastlane release build
+                    </p>
                   </div>
                 )}
               </div>
