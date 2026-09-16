@@ -17,12 +17,12 @@ export function SectionContainer({
   return (
     <section
       id={id}
-      className={cn("py-16 sm:py-24 scroll-mt-20", className)}
+      className={cn("py-16 sm:py-24 scroll-mt-20 relative", className)}
       {...props}
     >
       <div
         className={cn(
-          "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8",
+          "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8",
           containerClassName
         )}
       >

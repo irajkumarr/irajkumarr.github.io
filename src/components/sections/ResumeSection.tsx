@@ -1,4 +1,4 @@
-import { FileText, Download, ExternalLink, CheckCircle, Smartphone, Server, Database, Award } from "lucide-react";
+import { FileText, Download, ExternalLink, CheckCircle2, Shield, Smartphone, Server, Database, Check } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
 import { SectionContainer } from "../layout/SectionContainer";
 import { SectionHeading } from "../ui/SectionHeading";
@@ -12,16 +12,16 @@ export function ResumeSection() {
       <SectionHeading
         eyebrow="Curriculum Vitae"
         title="Resume & Credentials"
-        description="Download an official copy of my resume or preview the structured summary below."
+        description="Review my verified career trajectory, technical qualifications, and downloadable PDF resume."
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         {/* Quick Highlights / Download CTA Card */}
         <div className="lg:col-span-5 flex flex-col justify-between">
-          <Card className="bg-surface/80 border-surface-border p-6 flex flex-col justify-between h-full space-y-6">
+          <Card glow className="bg-surface/85 border-surface-border p-6 sm:p-7 flex flex-col justify-between h-full space-y-6">
             <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-accent/10 text-accent">
+              <div className="flex items-center gap-3.5">
+                <div className="p-3 rounded-xl bg-accent/10 border border-accent/20 text-accent">
                   <FileText className="w-6 h-6" />
                 </div>
                 <div>
@@ -29,23 +29,27 @@ export function ResumeSection() {
                     Raj Kumar Timalsina
                   </h3>
                   <p className="text-xs font-mono text-muted-foreground">
-                    Resume • Updated 2026
+                    Software Developer Resume &bull; Updated 2026
                   </p>
                 </div>
               </div>
 
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Contains detailed professional experience as a Flutter Developer Intern at Supreme IT Solutions, projects (E-Learning Platform, Job Portal, Food Delivery), university education at TU, and verified technical competencies.
+                Contains verified documentation of professional engineering at Supreme IT Solutions, full-stack cross-platform apps (Learnify, Job Portal, Food Delivery), university academics (B.Sc. CSIT), and technical competencies.
               </p>
 
-              <div className="space-y-2 pt-2">
-                <div className="flex items-center gap-2 text-xs text-foreground/80 font-mono">
-                  <CheckCircle className="w-3.5 h-3.5 text-emerald-500" />
-                  <span>Format: PDF Document</span>
+              <div className="space-y-2.5 pt-2">
+                <div className="flex items-center gap-2.5 text-xs text-foreground/85 font-mono">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                  <span>Standard ATS-Friendly PDF Format</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-foreground/80 font-mono">
-                  <CheckCircle className="w-3.5 h-3.5 text-emerald-500" />
-                  <span>Compatible with ATS & standard viewers</span>
+                <div className="flex items-center gap-2.5 text-xs text-foreground/85 font-mono">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                  <span>Compatible with recruiting tools & all devices</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-xs text-foreground/85 font-mono">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                  <span>Full contact & verified project repositories</span>
                 </div>
               </div>
             </div>
@@ -56,9 +60,9 @@ export function ResumeSection() {
                 download="Raj_Kumar_Timalsina_Resume.pdf"
                 className="flex-1"
               >
-                <Button variant="primary" size="md" className="w-full gap-2">
+                <Button variant="primary" size="md" className="w-full gap-2 shadow-glow/20">
                   <Download className="w-4 h-4" />
-                  <span>Download Resume</span>
+                  <span>Download PDF</span>
                 </Button>
               </a>
 
@@ -69,8 +73,8 @@ export function ResumeSection() {
                 className="flex-1"
               >
                 <Button variant="secondary" size="md" className="w-full gap-2">
-                  <ExternalLink className="w-4 h-4" />
-                  <span>Open PDF</span>
+                  <ExternalLink className="w-4 h-4 text-accent" />
+                  <span>Preview Tab</span>
                 </Button>
               </a>
             </div>
@@ -79,62 +83,63 @@ export function ResumeSection() {
 
         {/* Structured Resume Snapshot Card */}
         <div className="lg:col-span-7">
-          <Card className="bg-surface/50 border-surface-border p-6 space-y-6">
+          <Card className="bg-surface/70 border-surface-border p-6 sm:p-7 space-y-6">
             <div className="flex items-center justify-between pb-3 border-b border-surface-border/60">
-              <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground font-semibold">
-                Resume Overview
+              <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground font-semibold flex items-center gap-2">
+                <Shield className="w-3.5 h-3.5 text-accent" />
+                Verified Snapshot Overview
               </span>
-              {/* <Badge variant="accent" size="sm">
-                Verified Information
-              </Badge> */}
+              <Badge variant="accent" size="sm">
+                Latest Credentials
+              </Badge>
             </div>
 
-            <div className="space-y-4">
-              {/* Experience summary */}
-              <div className="space-y-1">
+            <div className="space-y-5">
+              {/* Experience Summary */}
+              <div className="space-y-1.5">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-semibold text-foreground">
+                  <span className="text-sm font-bold text-foreground">
                     Flutter Developer Intern
                   </span>
                   <span className="text-xs font-mono text-muted-foreground">
                     Dec 2025 – Apr 2026
                   </span>
                 </div>
-                <p className="text-xs text-accent font-medium">Supreme IT Solutions • Kathmandu (Remote)</p>
+                <p className="text-xs text-accent font-mono font-medium">Supreme IT Solutions &bull; Remote</p>
                 <p className="text-xs text-muted-foreground leading-relaxed pt-1">
-                  Built cross-platform Flutter features with Clean Architecture and BLoC/Cubit for 3+ client applications. Implemented JWT authentication and Dio REST APIs.
+                  Engineered cross-platform mobile features with Clean Architecture & BLoC/Cubit for 3+ client applications. Hardened app security using JWT authentication and Dio REST integrations.
                 </p>
               </div>
 
-              {/* Projects summary */}
-              <div className="pt-3 border-t border-surface-border/60 space-y-2">
+              {/* Projects Summary */}
+              <div className="pt-4 border-t border-surface-border/60 space-y-2.5">
                 <span className="text-xs font-mono uppercase text-muted-foreground font-semibold block">
-                  Core Projects
+                  Core Engineering Projects
                 </span>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                  <div className="p-2.5 rounded-lg border border-surface-border bg-surface text-xs">
-                    <p className="font-semibold text-foreground">E-Learning</p>
-                    <p className="text-[11px] text-muted-foreground font-mono">Flutter • Node • Stripe</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                  <div className="p-3 rounded-xl border border-surface-border bg-surface text-xs shadow-2xs">
+                    <p className="font-semibold text-foreground">Learnify E-Learning</p>
+                    <p className="text-[11px] text-muted-foreground font-mono mt-0.5">Flutter &bull; Node &bull; Stripe</p>
                   </div>
-                  <div className="p-2.5 rounded-lg border border-surface-border bg-surface text-xs">
-                    <p className="font-semibold text-foreground">Job Portal</p>
-                    <p className="text-[11px] text-muted-foreground font-mono">Flutter • MongoDB</p>
+                  <div className="p-3 rounded-xl border border-surface-border bg-surface text-xs shadow-2xs">
+                    <p className="font-semibold text-foreground">Job Portal App</p>
+                    <p className="text-[11px] text-muted-foreground font-mono mt-0.5">Flutter &bull; MongoDB Index</p>
                   </div>
-                  <div className="p-2.5 rounded-lg border border-surface-border bg-surface text-xs">
+                  <div className="p-3 rounded-xl border border-surface-border bg-surface text-xs shadow-2xs">
                     <p className="font-semibold text-foreground">Food Delivery</p>
-                    <p className="text-[11px] text-muted-foreground font-mono">Flutter • Firebase</p>
+                    <p className="text-[11px] text-muted-foreground font-mono mt-0.5">Flutter &bull; FCM Alerts</p>
                   </div>
                 </div>
               </div>
 
-              {/* Education summary */}
-              <div className="pt-3 border-t border-surface-border/60 flex items-center justify-between">
+              {/* Education Summary */}
+              <div className="pt-4 border-t border-surface-border/60 flex items-center justify-between">
                 <div>
                   <span className="text-xs font-mono uppercase text-muted-foreground font-semibold block">
-                    Education
+                    University Degree
                   </span>
                   <p className="text-xs font-semibold text-foreground">
-                    B.Sc. CSIT • Tribhuvan University
+                    B.Sc. CSIT &bull; Tribhuvan University (Birendra Campus)
                   </p>
                 </div>
                 <span className="text-xs font-mono text-muted-foreground">

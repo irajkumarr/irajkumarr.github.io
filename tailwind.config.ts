@@ -34,7 +34,9 @@ const config: Config = {
       boxShadow: {
         subtle: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
         card: "0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.03)",
-        glow: "0 0 30px -5px rgba(56, 189, 248, 0.15)",
+        "card-hover": "0 12px 30px -4px rgba(0, 0, 0, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.06)",
+        glow: "0 0 35px -5px rgba(56, 189, 248, 0.18)",
+        "glow-lg": "0 0 60px -10px rgba(56, 189, 248, 0.25)",
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out forwards",
@@ -47,12 +49,12 @@ const config: Config = {
           "100%": { opacity: "1" },
         },
         slideUp: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "0%": { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         pulseSubtle: {
           "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.6" },
+          "50%": { opacity: "0.55" },
         },
       },
     },

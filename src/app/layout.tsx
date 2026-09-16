@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
-    { media: "(prefers-color-scheme: dark)", color: "#090d16" },
+    { media: "(prefers-color-scheme: dark)", color: "#080c14" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -42,7 +42,8 @@ export const metadata: Metadata = {
     "Flutter Developer",
     "Full-Stack Developer",
     "Mobile App Developer",
-    "Nepal",
+    "Clean Architecture Flutter",
+    "Nepal Developer",
     "Dart",
     "Node.js",
     "MongoDB",
@@ -110,17 +111,21 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="min-h-screen font-sans bg-background text-foreground antialiased selection:bg-accent selection:text-accent-foreground flex flex-col relative">
+      <body className="min-h-screen font-sans bg-background text-foreground antialiased selection:bg-accent selection:text-accent-foreground flex flex-col relative overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {/* Subtle Background Glow Elements */}
+          {/* Subtle Developer Engineering Grid Background with Radial Mask */}
+          <div className="fixed inset-0 -z-10 pointer-events-none tech-grid-pattern tech-radial-mask opacity-80" />
+
+          {/* Elegant Ambient Atmospheric Radial Lights */}
           <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/5 blur-[120px] rounded-full" />
-            <div className="absolute top-[600px] right-0 w-[500px] h-[500px] bg-accent/3 blur-[140px] rounded-full" />
+            <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[380px] bg-accent/8 blur-[130px] rounded-full" />
+            <div className="absolute top-[38%] -right-40 w-[460px] h-[460px] bg-accent/4 blur-[150px] rounded-full" />
+            <div className="absolute bottom-[20%] -left-40 w-[420px] h-[420px] bg-accent/4 blur-[140px] rounded-full" />
           </div>
 
           <Navbar />
