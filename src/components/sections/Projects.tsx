@@ -1,7 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { ExternalLink, Layers, Sparkles, CheckCircle2, ArrowRight, Smartphone, Server, Database, Shield } from "lucide-react";
+import {
+  ExternalLink,
+  Layers,
+  Sparkles,
+  CheckCircle2,
+  Calendar,
+  Shield,
+  Tag,
+} from "lucide-react";
 import { Github } from "@/components/ui/Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
 import { SectionContainer } from "../layout/SectionContainer";
@@ -11,16 +19,34 @@ import { Badge } from "../ui/Badge";
 import { Button } from "../ui/Button";
 
 export function Projects() {
-  const [activeFilter, setActiveFilter] = useState<"all" | "flutter" | "fullstack">("all");
+  const [activeFilter, setActiveFilter] = useState<
+    "all" | "flutter" | "fullstack" | "backend"
+  >("all");
 
   const filteredProjects = PORTFOLIO_DATA.projects.filter((project) => {
-    if (activeFilter === "flutter") return project.technologies.includes("Flutter");
-    if (activeFilter === "fullstack") return project.badge?.toLowerCase().includes("full stack") || project.featured;
+    if (activeFilter === "flutter")
+      return project.technologies.includes("Flutter");
+    if (activeFilter === "backend")
+      return (
+        project.technologies.includes("NodeJS") ||
+        project.technologies.includes("Express") ||
+        project.technologies.includes("NestJS") ||
+        project.technologies.includes("JavaScript") ||
+        project.technologies.includes("TypeScript")
+      );
+    if (activeFilter === "fullstack")
+      return (
+        project.badge?.toLowerCase().includes("full stack") || project.featured
+      );
+
     return true;
   });
 
   return (
-    <SectionContainer id="projects" className="border-t border-surface-border/60">
+    <SectionContainer
+      id="projects"
+      className="border-t border-surface-border/60"
+    >
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
         <SectionHeading
           eyebrow="Production Engineering"
@@ -30,7 +56,7 @@ export function Projects() {
         />
 
         {/* Project Category Filter Pills */}
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-surface border border-surface-border self-start sm:self-auto shrink-0">
+        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-surface border border-surface-border self-start sm:self-auto shrink-0 shadow-2xs">
           <button
             onClick={() => setActiveFilter("all")}
             className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
@@ -61,12 +87,22 @@ export function Projects() {
           >
             Full-Stack
           </button>
+          <button
+            onClick={() => setActiveFilter("backend")}
+            className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
+              activeFilter === "backend"
+                ? "bg-foreground text-background font-medium shadow-2xs"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Backend
+          </button>
         </div>
       </div>
 
       <div className="grid grid-cols-1 gap-8">
         {filteredProjects.map((project, index) => {
-          const isPrimary = project.id === "e-learning-platform";
+          const isPrimary = index === 0;
 
           return (
             <Card
@@ -80,18 +116,26 @@ export function Projects() {
               <div className="flex flex-col space-y-6">
                 {/* Header Row */}
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-                  <div className="space-y-1.5 max-w-2xl">
+                  <div className="space-y-2 max-w-2xl">
                     <div className="flex flex-wrap items-center gap-2.5">
                       <h3 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
                         {project.title}
                       </h3>
+
+                      {/* Project Badge / Tag */}
                       {project.badge && (
-                        <Badge variant={isPrimary ? "accent" : "default"} size="sm">
-                          {isPrimary && <Sparkles className="w-3 h-3 mr-1 text-accent" />}
+                        <Badge
+                          variant={isPrimary ? "accent" : "default"}
+                          size="sm"
+                        >
+                          {isPrimary && (
+                            <Sparkles className="w-3 h-3 mr-1 text-accent" />
+                          )}
                           {project.badge}
                         </Badge>
                       )}
                     </div>
+
                     <p className="text-sm sm:text-base font-medium text-foreground/85">
                       {project.tagline}
                     </p>
@@ -106,7 +150,11 @@ export function Projects() {
                         rel="noopener noreferrer"
                         aria-label={`${project.title} GitHub Repository`}
                       >
-                        <Button variant="secondary" size="sm" className="gap-1.5 font-mono">
+                        <Button
+                          variant="secondary"
+                          size="sm"
+                          className="gap-1.5 font-mono"
+                        >
                           <Github className="w-3.5 h-3.5" />
                           <span>Source Code</span>
                         </Button>
@@ -119,7 +167,11 @@ export function Projects() {
                         rel="noopener noreferrer"
                         aria-label={`${project.title} Live Preview`}
                       >
-                        <Button variant="primary" size="sm" className="gap-1.5 font-mono">
+                        <Button
+                          variant="primary"
+                          size="sm"
+                          className="gap-1.5 font-mono"
+                        >
                           <ExternalLink className="w-3.5 h-3.5" />
                           <span>Live Demo</span>
                         </Button>
@@ -129,33 +181,37 @@ export function Projects() {
                 </div>
 
                 {/* Problem Solved Callout Box */}
-                <div className="p-4 rounded-xl bg-surface-hover/70 border border-surface-border/90 text-xs sm:text-sm">
-                  <div className="flex items-center gap-1.5 font-semibold text-accent font-mono uppercase tracking-wider text-[11px] mb-1.5">
-                    <Shield className="w-3.5 h-3.5" />
-                    <span>Problem & Solution Context</span>
+                {project.problemSolved && (
+                  <div className="p-4 rounded-xl bg-surface-hover/70 border border-surface-border/90 text-xs sm:text-sm">
+                    <div className="flex items-center gap-1.5 font-semibold text-accent font-mono uppercase tracking-wider text-[11px] mb-1.5">
+                      <Shield className="w-3.5 h-3.5" />
+                      <span>Problem & Solution Context</span>
+                    </div>
+                    <p className="text-foreground/85 leading-relaxed">
+                      {project.problemSolved}
+                    </p>
                   </div>
-                  <p className="text-foreground/85 leading-relaxed">
-                    {project.problemSolved}
-                  </p>
-                </div>
+                )}
 
                 {/* Key Features & Architecture Deliverables */}
-                <div className="space-y-2.5">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-muted-foreground font-semibold">
-                    Key Features & Technical Implementations:
-                  </h4>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {project.highlights.map((highlight, hIdx) => (
-                      <li
-                        key={hIdx}
-                        className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/80 leading-relaxed group"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {project.highlights && project.highlights.length > 0 && (
+                  <div className="space-y-2.5">
+                    <h4 className="text-xs font-mono uppercase tracking-wider text-muted-foreground font-semibold">
+                      Key Features & Technical Implementations:
+                    </h4>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {project.highlights.map((highlight, hIdx) => (
+                        <li
+                          key={hIdx}
+                          className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/80 leading-relaxed group"
+                        >
+                          <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 {/* Tech Stack Chips */}
                 <div className="pt-4 border-t border-surface-border/60">

@@ -69,9 +69,9 @@ export function About() {
                 <Briefcase className="w-4 h-4" />
               </div>
               <div className="text-xs">
-                <p className="text-muted-foreground font-mono">Experience</p>
+                <p className="text-muted-foreground font-mono">Industry Experience</p>
                 <p className="font-semibold text-foreground text-sm">
-                  Supreme IT Solutions
+                  DevanaSoft &bull; Supreme IT
                 </p>
               </div>
             </div>

@@ -96,19 +96,36 @@ export function ResumeSection() {
 
             <div className="space-y-5">
               {/* Experience Summary */}
-              <div className="space-y-1.5">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-bold text-foreground">
-                    Flutter Developer Intern
-                  </span>
-                  <span className="text-xs font-mono text-muted-foreground">
-                    Dec 2025 – Apr 2026
-                  </span>
+              <div className="space-y-3">
+                <div className="space-y-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-bold text-foreground">
+                      Flutter Developer Intern
+                    </span>
+                    <span className="text-xs font-mono text-emerald-500 font-medium">
+                      Aug 2026 – Present
+                    </span>
+                  </div>
+                  <p className="text-xs text-accent font-mono font-medium">DevanaSoft Pvt. Ltd. &bull; Gatthaghar (Onsite)</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed pt-0.5">
+                    Developing production cross-platform mobile features in Flutter with responsive state isolation and REST API integrations.
+                  </p>
                 </div>
-                <p className="text-xs text-accent font-mono font-medium">Supreme IT Solutions &bull; Remote</p>
-                <p className="text-xs text-muted-foreground leading-relaxed pt-1">
-                  Engineered cross-platform mobile features with Clean Architecture & BLoC/Cubit for 3+ client applications. Hardened app security using JWT authentication and Dio REST integrations.
-                </p>
+
+                <div className="pt-2.5 border-t border-surface-border/40 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-semibold text-foreground/90">
+                      Flutter Developer Intern
+                    </span>
+                    <span className="text-xs font-mono text-muted-foreground">
+                      Dec 2025 – Apr 2026
+                    </span>
+                  </div>
+                  <p className="text-xs text-accent/80 font-mono font-medium">Supreme IT Solutions &bull; Remote</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed pt-0.5">
+                    Engineered cross-platform mobile features with Clean Architecture & BLoC/Cubit for 3+ client applications.
+                  </p>
+                </div>
               </div>
 
               {/* Projects Summary */}
@@ -119,15 +136,15 @@ export function ResumeSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                   <div className="p-3 rounded-xl border border-surface-border bg-surface text-xs shadow-2xs">
                     <p className="font-semibold text-foreground">Learnify E-Learning</p>
-                    <p className="text-[11px] text-muted-foreground font-mono mt-0.5">Flutter &bull; Node &bull; Stripe</p>
+                    <p className="text-[11px] text-muted-foreground font-mono mt-0.5">Flutter &bull; NodeJS &bull; Stripe</p>
                   </div>
                   <div className="p-3 rounded-xl border border-surface-border bg-surface text-xs shadow-2xs">
-                    <p className="font-semibold text-foreground">Job Portal App</p>
-                    <p className="text-[11px] text-muted-foreground font-mono mt-0.5">Flutter &bull; MongoDB Index</p>
+                    <p className="font-semibold text-foreground">ServiceOnWheels</p>
+                    <p className="text-[11px] text-muted-foreground font-mono mt-0.5">Flutter &bull; NodeJS &bull; MongoDB</p>
                   </div>
                   <div className="p-3 rounded-xl border border-surface-border bg-surface text-xs shadow-2xs">
-                    <p className="font-semibold text-foreground">Food Delivery</p>
-                    <p className="text-[11px] text-muted-foreground font-mono mt-0.5">Flutter &bull; FCM Alerts</p>
+                    <p className="font-semibold text-foreground">Rojgari Job Platform</p>
+                    <p className="text-[11px] text-muted-foreground font-mono mt-0.5">Flutter &bull; Express &bull; JWT</p>
                   </div>
                 </div>
               </div>

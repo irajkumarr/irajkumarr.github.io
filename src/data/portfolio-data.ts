@@ -68,7 +68,7 @@ export const PORTFOLIO_DATA = {
     title: "Engineering reliable mobile apps & scalable backend architectures.",
     paragraphs: [
       "I am a software developer with a deep focus on Flutter cross-platform mobile development and Node.js backend engineering. I enjoy architecting systems from first principles — applying Clean Architecture, strict state management patterns, and performant database indexing.",
-      "My industry experience includes developing client applications at Supreme IT Solutions, where I delivered scalable features using BLoC/Cubit, integrated secure REST APIs via Dio, and implemented JWT-based authentication pipelines.",
+      "My industry experience includes developing client applications at Supreme IT Solutions and currently building production Flutter mobile features onsite at DevanaSoft Pvt. Ltd., applying BLoC/Cubit, integrating secure REST APIs via Dio, and implementing robust state workflows.",
       "I am currently completing my Bachelor of Science in Computer Science and Information Technology (B.Sc. CSIT) at Birendra Multiple Campus, Tribhuvan University, deepening my understanding of data structures, algorithms, database systems, and distributed computing.",
     ],
     technicalStrengths: [
@@ -82,6 +82,30 @@ export const PORTFOLIO_DATA = {
   },
 
   experience: [
+    {
+      id: "devanasoft",
+      role: "Flutter Developer Intern",
+      company: "DevanaSoft Pvt. Ltd.",
+      location: "Gatthaghar, Bhaktapur, Nepal",
+      workType: "Onsite",
+      period: "August 2026 – Present",
+      startDate: "Aug 2026",
+      endDate: "Present",
+      current: true,
+      description: [
+        "Developing production-ready cross-platform mobile features in Flutter with responsive UI and clean state management.",
+        "Collaborating onsite with senior engineers and QA to architect, implement, and maintain reliable mobile applications.",
+        "Integrating REST APIs and optimizing state workflows to deliver seamless user experiences.",
+      ],
+      technologies: [
+        "Flutter",
+        "Dart",
+        "BLoC / Cubit",
+        "REST APIs",
+        "Clean Architecture",
+        "Git",
+      ],
+    },
     {
       id: "supreme-it-solutions",
       role: "Flutter Developer Intern",
@@ -113,8 +137,8 @@ export const PORTFOLIO_DATA = {
 
   projects: [
     {
-      id: "e-learning-platform",
-      title: "E-Learning Platform",
+      id: "learnify-elearning-app",
+      title: "Learnify - E-learning App",
       tagline:
         "Full-stack mobile learning ecosystem with automated certification & payments",
       description:
@@ -130,10 +154,10 @@ export const PORTFOLIO_DATA = {
       technologies: [
         "Flutter",
         "Dart",
-        "Riverpod",
-        "Node.js",
-        "Express.js",
+        "NodeJS",
+        "Express",
         "MongoDB",
+        "Riverpod",
         "Stripe",
         "Firebase FCM",
         "GitHub Actions",
@@ -144,8 +168,42 @@ export const PORTFOLIO_DATA = {
       badge: "Featured Project",
     },
     {
-      id: "job-portal-application",
-      title: "Job Portal Application",
+      id: "task-management-api",
+      title: "Task Management API",
+      tagline:
+        "Production-ready REST API for collaborative workspaces, projects & task management",
+      description:
+        "A scalable backend API built with NestJS and PostgreSQL for collaborative task management, featuring workspaces, members, projects, tasks, comments, attachments, notifications, and activity tracking.",
+      problemSolved:
+        "Provides teams with a centralized platform for organizing projects and tasks, managing workspace collaboration, tracking activities, and keeping members informed through notifications.",
+      highlights: [
+        "Built modular REST API with NestJS, TypeORM, and PostgreSQL for scalable task and project management.",
+        "Implemented JWT authentication with role-based authorization for secure workspace and resource access.",
+        "Developed workspace, member, project, task, comment, and attachment management workflows.",
+        "Implemented event-driven notifications and scheduled background jobs for automated application tasks.",
+        "Added activity logging to track important workspace, project, and task operations.",
+        "Applied request validation, API throttling, structured error handling, and Pino logging for production-ready API reliability.",
+      ],
+      technologies: [
+        "NestJS",
+        "TypeScript",
+        "PostgreSQL",
+        "TypeORM",
+        "JWT",
+        "Passport",
+        "REST API",
+        "Pino",
+        "Event Emitter",
+        "Scheduler",
+        "Throttler",
+      ],
+      githubUrl: "https://github.com/irajkumarr/Task-Management-API",
+      featured: true,
+      badge: "Featured Project",
+    },
+    {
+      id: "rojgari-job-seeker",
+      title: "Rojgari - Job Seeker Platform",
       tagline:
         "High-performance job discovery & applicant matching mobile platform",
       description:
@@ -156,23 +214,43 @@ export const PORTFOLIO_DATA = {
         "Architected a Node.js/MongoDB backend with optimized indexing for faster, more scalable search performance.",
         "Built category and location-based filtering with real-time push notification alerts.",
         "Utilized Provider state management to keep the cross-platform UI responsive with live application status updates.",
+        "Secured API endpoints and user session lifecycle with robust JWT authentication pipelines.",
       ],
       technologies: [
         "Flutter",
-        "Dart",
-        "Provider",
-        "Node.js",
+        "NodeJS",
+        "Express",
         "MongoDB",
+        "JWT",
         "REST APIs",
-        "Firebase",
       ],
       githubUrl: "https://github.com/irajkumarr/job-seeker-application",
       featured: true,
       badge: "Full Stack",
     },
     {
-      id: "food-delivery-application",
-      title: "Food Delivery Application",
+      id: "kirana-grocery-shopping",
+      title: "Kirana - Grocery Shopping App",
+      tagline:
+        "Fast and intuitive grocery commerce app with category filtering and cart checkout",
+      description:
+        "A responsive mobile grocery shopping application providing instantaneous inventory exploration, category filtering, cart calculation, and streamlined order placement.",
+      problemSolved:
+        "Provides lightning-fast mobile catalog browsing with client-side caching and dynamic price estimation for everyday household essentials.",
+      highlights: [
+        "Built intuitive grocery product catalog with rapid category navigation and keyword search.",
+        "Implemented dynamic shopping cart with real-time subtotal, discount, and tax calculation.",
+        "Connected to a Node.js REST API with MongoDB for efficient product inventory querying.",
+        "Optimized mobile render performance and smooth page transitions with Flutter.",
+      ],
+      technologies: ["Flutter", "NodeJS", "MongoDB", "REST API"],
+      githubUrl: "https://github.com/irajkumarr/grocery-application",
+      featured: false,
+      badge: "Mobile Commerce",
+    },
+    {
+      id: "chulesi-food-delivery",
+      title: "Chulesi - Food Delivery App",
       tagline:
         "End-to-end mobile ordering system with live tracking and promo logic",
       description:
@@ -186,17 +264,61 @@ export const PORTFOLIO_DATA = {
       ],
       technologies: [
         "Flutter",
-        "Dart",
-        "Node.js",
-        "Express.js",
+        "NodeJS",
         "MongoDB",
-        "Firebase FCM",
-        "JWT",
+        "Firebase Notifications",
+        "Express",
       ],
       githubUrl:
         "https://github.com/irajkumarr/chulesi-foodDelivery-app-frontend",
       featured: false,
-      badge: "Mobile App",
+      badge: "Food & Logistics",
+    },
+    {
+      id: "hostel-mate",
+      title: "HostelMate – Hostel Management System",
+      tagline:
+        "Digital hostel administration system for resident allocation, fees & notices",
+      description:
+        "A cross-platform mobile management solution for hostel administrators and residents to streamline room allocations, dues collection, meal schedules, and digital notices.",
+      problemSolved:
+        "Replaces manual paper ledgers with automated fee ledger tracking, digital complaints desk, and centralized broadcast announcements.",
+      highlights: [
+        "Designed room and bed allocation management module with occupancy rate indicators.",
+        "Implemented secure student records, monthly fee tracking, and billing invoice generation.",
+        "Engineered digital notice board with instant push alerts for hostel announcements and meal menus.",
+        "Built robust backend services with Node.js/Express and MongoDB validation schemas.",
+      ],
+      technologies: [
+        "Flutter",
+        "NodeJS",
+        "Express",
+        "MongoDB",
+        "Clean Architecture",
+      ],
+      githubUrl: "https://github.com/irajkumarr/hostel_management_app",
+      featured: false,
+      badge: "Management System",
+    },
+    {
+      id: "service-on-wheels",
+      title: "ServiceOnWheels - Servicing & Maintenance App",
+      tagline:
+        "On-demand doorstep vehicle servicing and maintenance booking platform",
+      description:
+        "A full-stack mobile platform designed to schedule doorstep vehicle servicing, track service stage progression, and manage maintenance logs with real-time updates.",
+      problemSolved:
+        "Eliminates scheduling friction between vehicle owners and mechanics with instant slot reservation, service quotation calculations, and transparent progress tracking.",
+      highlights: [
+        "Developed end-to-end service booking flow with date-time slot selection and vehicle profile management.",
+        "Architected REST APIs in Node.js & Express for maintenance categorization, pricing tiers, and booking statuses.",
+        "Integrated MongoDB for flexible booking documents and live status transitions.",
+        "Built clean, modular Flutter UI with responsive state isolation for smooth customer scheduling experience.",
+      ],
+      technologies: ["Flutter", "NodeJS", "Express", "MongoDB", "REST APIs"],
+      githubUrl: "https://github.com/irajkumarr/servicing_maintenance_app",
+      featured: true,
+      badge: "Full Stack",
     },
   ] as ProjectItem[],
 
