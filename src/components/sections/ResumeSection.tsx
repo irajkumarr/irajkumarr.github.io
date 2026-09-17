@@ -1,4 +1,14 @@
-import { FileText, Download, ExternalLink, CheckCircle2, Shield, Smartphone, Server, Database, Check } from "lucide-react";
+import {
+  FileText,
+  Download,
+  ExternalLink,
+  CheckCircle2,
+  Shield,
+  Smartphone,
+  Server,
+  Database,
+  Check,
+} from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
 import { SectionContainer } from "../layout/SectionContainer";
 import { SectionHeading } from "../ui/SectionHeading";
@@ -18,7 +28,10 @@ export function ResumeSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         {/* Quick Highlights / Download CTA Card */}
         <div className="lg:col-span-5 flex flex-col justify-between">
-          <Card glow className="bg-surface/85 border-surface-border p-6 sm:p-7 flex flex-col justify-between h-full space-y-6">
+          <Card
+            glow
+            className="bg-surface/85 border-surface-border p-6 sm:p-7 flex flex-col justify-between h-full space-y-6"
+          >
             <div className="space-y-4">
               <div className="flex items-center gap-3.5">
                 <div className="p-3 rounded-xl bg-accent/10 border border-accent/20 text-accent">
@@ -35,7 +48,10 @@ export function ResumeSection() {
               </div>
 
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Contains verified documentation of professional engineering at Supreme IT Solutions, full-stack cross-platform apps (Learnify, Job Portal, Food Delivery), university academics (B.Sc. CSIT), and technical competencies.
+                Contains verified documentation of professional engineering at
+                Supreme IT Solutions, full-stack cross-platform apps (Learnify,
+                Job Portal, Food Delivery), university academics (B.Sc. CSIT),
+                and technical competencies.
               </p>
 
               <div className="space-y-2.5 pt-2">
@@ -60,7 +76,11 @@ export function ResumeSection() {
                 download="Raj_Kumar_Timalsina_Resume.pdf"
                 className="flex-1"
               >
-                <Button variant="primary" size="md" className="w-full gap-2 shadow-glow/20">
+                <Button
+                  variant="primary"
+                  size="md"
+                  className="w-full gap-2 shadow-glow/20"
+                >
                   <Download className="w-4 h-4" />
                   <span>Download PDF</span>
                 </Button>
@@ -106,9 +126,13 @@ export function ResumeSection() {
                       Aug 2026 – Present
                     </span>
                   </div>
-                  <p className="text-xs text-accent font-mono font-medium">DevanaSoft Pvt. Ltd. &bull; Gatthaghar (Onsite)</p>
+                  <p className="text-xs text-accent font-mono font-medium">
+                    DevanaSoft Pvt. Ltd. &bull; Gatthaghar (Onsite)
+                  </p>
                   <p className="text-xs text-muted-foreground leading-relaxed pt-0.5">
-                    Developing production cross-platform mobile features in Flutter with responsive state isolation and REST API integrations.
+                    Developing production cross-platform mobile features in
+                    Flutter with responsive state isolation and REST API
+                    integrations.
                   </p>
                 </div>
 
@@ -121,9 +145,12 @@ export function ResumeSection() {
                       Dec 2025 – Apr 2026
                     </span>
                   </div>
-                  <p className="text-xs text-accent/80 font-mono font-medium">Supreme IT Solutions &bull; Remote</p>
+                  <p className="text-xs text-accent/80 font-mono font-medium">
+                    Supreme IT Solutions &bull; Remote
+                  </p>
                   <p className="text-xs text-muted-foreground leading-relaxed pt-0.5">
-                    Engineered cross-platform mobile features with Clean Architecture & BLoC/Cubit for 3+ client applications.
+                    Engineered cross-platform mobile features with Clean
+                    Architecture & BLoC/Cubit for 3+ client applications.
                   </p>
                 </div>
               </div>
@@ -135,16 +162,28 @@ export function ResumeSection() {
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                   <div className="p-3 rounded-xl border border-surface-border bg-surface text-xs shadow-2xs">
-                    <p className="font-semibold text-foreground">Learnify E-Learning</p>
-                    <p className="text-[11px] text-muted-foreground font-mono mt-0.5">Flutter &bull; NodeJS &bull; Stripe</p>
+                    <p className="font-semibold text-foreground">
+                      Learnify E-Learning
+                    </p>
+                    <p className="text-[11px] text-muted-foreground font-mono mt-0.5">
+                      Flutter &bull; NodeJS &bull; Stripe
+                    </p>
                   </div>
                   <div className="p-3 rounded-xl border border-surface-border bg-surface text-xs shadow-2xs">
-                    <p className="font-semibold text-foreground">ServiceOnWheels</p>
-                    <p className="text-[11px] text-muted-foreground font-mono mt-0.5">Flutter &bull; NodeJS &bull; MongoDB</p>
+                    <p className="font-semibold text-foreground">
+                      Rojgari Job Platform
+                    </p>
+                    <p className="text-[11px] text-muted-foreground font-mono mt-0.5">
+                      Flutter &bull; Express &bull; JWT
+                    </p>
                   </div>
                   <div className="p-3 rounded-xl border border-surface-border bg-surface text-xs shadow-2xs">
-                    <p className="font-semibold text-foreground">Rojgari Job Platform</p>
-                    <p className="text-[11px] text-muted-foreground font-mono mt-0.5">Flutter &bull; Express &bull; JWT</p>
+                    <p className="font-semibold text-foreground">
+                      Chulesi Food Delivery
+                    </p>
+                    <p className="text-[11px] text-muted-foreground font-mono mt-0.5">
+                      Flutter &bull; Express &bull; FCM
+                    </p>
                   </div>
                 </div>
               </div>
