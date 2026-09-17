@@ -179,21 +179,14 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
                   <div className="flex flex-wrap items-center justify-between gap-1">
                     <span className="text-accent font-bold">[{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}] {proj.title}</span>
                     <div className="flex items-center gap-1.5">
-                      {proj.type && (
-                        <span className="text-[10px] text-accent/90 bg-accent/10 px-1.5 py-0.2 rounded border border-accent/20">
-                          {proj.type}
-                        </span>
-                      )}
-                      {proj.badge && (
+                                            {proj.badge && (
                         <span className="text-[10px] text-muted-foreground bg-surface-border/60 px-1.5 py-0.2 rounded">
                           {proj.badge}
                         </span>
                       )}
                     </div>
                   </div>
-                  {proj.duration && (
-                    <p className="text-[10px] text-muted-foreground font-mono">📅 {proj.duration}</p>
-                  )}
+                 
                   <p className="text-muted-foreground text-[11px]">{proj.tagline}</p>
                   <p className="text-foreground/80 text-[11px]">
                     <span className="text-muted-foreground">Stack:</span> {proj.technologies.join(", ")}
