@@ -1,6 +1,6 @@
 # Raj Kumar Timalsina - Personal Portfolio Website
 
-Production-grade developer portfolio built with **Next.js 15 (App Router)**, **TypeScript**, **Tailwind CSS**, and **Lucide Icons**, configured for static export to **GitHub Pages** under custom domain [`rajkumartimalsina.me`](https://rajkumartimalsina.me).
+Production-grade developer portfolio built with **Next.js 15 (App Router)**, **TypeScript**, **Tailwind CSS**, and **Lucide Icons**, configured for static export to **GitHub Pages** under custom domain [`rajkumartimalsina.me`](https://www.rajkumartimalsina.me).
 
 ---
 
@@ -74,18 +74,22 @@ irajkumarr.github.io/
 ## 🚀 Getting Started
 
 ### 1. Prerequisites
+
 - Node.js 18.18+ or 20+
 - npm (or pnpm / yarn)
 
 ### 2. Install Dependencies
+
 ```bash
 npm install
 ```
 
 ### 3. Run Locally in Development Mode
+
 ```bash
 npm run dev
 ```
+
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
@@ -93,9 +97,11 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## 📦 Building for Production
 
 To create a static export bundle in the `out/` directory:
+
 ```bash
 npm run build
 ```
+
 This generates static HTML, CSS, JS, and copies all assets (including `CNAME` and `resume.pdf`) into `out/`.
 
 ---
@@ -105,17 +111,20 @@ This generates static HTML, CSS, JS, and copies all assets (including `CNAME` an
 This repository is already configured with an automated GitHub Actions deployment workflow in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
 
 ### Step 1: Enable GitHub Pages in your Repository Settings
+
 1. Go to your repository on GitHub: `https://github.com/irajkumarr/irajkumarr.github.io`
 2. Click **Settings** > **Pages** (in the left sidebar).
 3. Under **Build and deployment** > **Source**, select **GitHub Actions**.
 
 ### Step 2: Push your code to GitHub
+
 ```bash
 git add .
 git commit -m "feat: build production portfolio with Next.js static export"
 git push origin main
 ```
-The GitHub Actions workflow will automatically run, build the static export, and deploy it to `https://rajkumartimalsina.me`.
+
+The GitHub Actions workflow will automatically run, build the static export, and deploy it to `https://www.rajkumartimalsina.me`.
 
 ---
 
@@ -124,7 +133,9 @@ The GitHub Actions workflow will automatically run, build the static export, and
 All portfolio content is decoupled from UI components and stored in a single source of truth: [`src/data/portfolio-data.ts`](src/data/portfolio-data.ts).
 
 ### 1. Update Projects
+
 Open `src/data/portfolio-data.ts` and locate `PORTFOLIO_DATA.projects`:
+
 ```typescript
 {
   id: "project-slug",
@@ -145,17 +156,22 @@ Open `src/data/portfolio-data.ts` and locate `PORTFOLIO_DATA.projects`:
 ```
 
 ### 2. Update Experience
+
 In `src/data/portfolio-data.ts`, update `PORTFOLIO_DATA.experience`.
 
 ### 3. Update Skills
+
 In `src/data/portfolio-data.ts`, update `PORTFOLIO_DATA.skillCategories`.
 
 ### 4. Update Resume
+
 - Place your new PDF file directly at `public/resume.pdf`, **OR**
 - Edit `scripts/generate-resume-pdf.js` and run:
+
 ```bash
 node scripts/generate-resume-pdf.js
 ```
 
 ### 5. Change Social Links / Contact Information
+
 In `src/data/portfolio-data.ts`, modify `PORTFOLIO_DATA.personal` and `PORTFOLIO_DATA.socialLinks`.

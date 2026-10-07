@@ -56,7 +56,7 @@ export const PORTFOLIO_DATA = {
     email: "rajk.timalsina05@gmail.com",
     phone: "+977 9765033186",
     location: "Hetauda / Kathmandu, Nepal",
-    domain: "https://rajkumartimalsina.me",
+    domain: "https://www.rajkumartimalsina.me",
     github: "https://github.com/irajkumarr",
     linkedin: "https://linkedin.com/in/irajkumarr",
     resumeUrl: "/resume.pdf",
