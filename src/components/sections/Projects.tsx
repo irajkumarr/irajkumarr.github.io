@@ -1,163 +1,53 @@
 "use client";
 
-import { useState } from "react";
-import {
-  ExternalLink,
-  Layers,
-  Sparkles,
-  CheckCircle2,
-  Calendar,
-  Shield,
-  Tag,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Github } from "@/components/ui/Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
-import { SectionContainer } from "../layout/SectionContainer";
-import { SectionHeading } from "../ui/SectionHeading";
-import { Card } from "../ui/Card";
-import { Badge } from "../ui/Badge";
-import { Button } from "../ui/Button";
 
 export function Projects() {
-  const [activeFilter, setActiveFilter] = useState<
-    "all" | "flutter" | "fullstack" | "backend"
-  >("all");
-
-  const filteredProjects = PORTFOLIO_DATA.projects.filter((project) => {
-    if (activeFilter === "flutter")
-      return project.technologies.includes("Flutter");
-    if (activeFilter === "backend")
-      return (
-        project.technologies.includes("NodeJS") ||
-        project.technologies.includes("Express") ||
-        project.technologies.includes("NestJS") ||
-        project.technologies.includes("JavaScript") ||
-        project.technologies.includes("TypeScript")
-      );
-    if (activeFilter === "fullstack")
-      return (
-        project.badge?.toLowerCase().includes("full stack") || project.featured
-      );
-
-    return true;
-  });
-
   return (
-    <SectionContainer
-      id="projects"
-      className="border-t border-surface-border/60"
-    >
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
-        <SectionHeading
-          eyebrow="Production Engineering"
-          title="Featured Projects"
-          description="Cross-platform mobile applications and REST backend services architected with Clean Architecture, state isolation, and real-time cloud capabilities."
-          className="mb-0"
-        />
-
-        {/* Project Category Filter Pills */}
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-surface border border-surface-border self-start sm:self-auto shrink-0 shadow-2xs">
-          <button
-            onClick={() => setActiveFilter("all")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
-              activeFilter === "all"
-                ? "bg-foreground text-background font-medium shadow-2xs"
-                : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            All ({PORTFOLIO_DATA.projects.length})
-          </button>
-          <button
-            onClick={() => setActiveFilter("flutter")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
-              activeFilter === "flutter"
-                ? "bg-foreground text-background font-medium shadow-2xs"
-                : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Mobile & Flutter
-          </button>
-          <button
-            onClick={() => setActiveFilter("fullstack")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
-              activeFilter === "fullstack"
-                ? "bg-foreground text-background font-medium shadow-2xs"
-                : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Full-Stack
-          </button>
-          <button
-            onClick={() => setActiveFilter("backend")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
-              activeFilter === "backend"
-                ? "bg-foreground text-background font-medium shadow-2xs"
-                : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Backend
-          </button>
+    <section id="projects" className="py-20 border-t border-surface-border">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="space-y-2 mb-12">
+          <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+            Selected Work
+          </p>
+          <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+            Featured Projects
+          </h2>
+          <p className="text-sm text-muted-foreground max-w-xl">
+            A selection of production-grade mobile applications and backend services built with Flutter and Node/NestJS.
+          </p>
         </div>
-      </div>
 
-      <div className="grid grid-cols-1 gap-8">
-        {filteredProjects.map((project, index) => {
-          const isPrimary = index === 0;
-
-          return (
-            <Card
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {PORTFOLIO_DATA.projects.map((project) => (
+            <article
               key={project.id}
-              hoverEffect
-              glow={isPrimary}
-              className={`relative overflow-hidden bg-surface/85 border-surface-border transition-all duration-300 ${
-                isPrimary ? "lg:p-8 border-accent/40 shadow-card" : "p-6 sm:p-7"
-              }`}
+              className="flex flex-col justify-between rounded-xl border border-surface-border bg-surface p-6 sm:p-7 hover:border-foreground/30 transition-colors"
             >
-              <div className="flex flex-col space-y-6">
-                {/* Header Row */}
-                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-                  <div className="space-y-2 max-w-2xl">
-                    <div className="flex flex-wrap items-center gap-2.5">
-                      <h3 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
-                        {project.title}
-                      </h3>
-
-                      {/* Project Badge / Tag */}
-                      {project.badge && (
-                        <Badge
-                          variant={isPrimary ? "accent" : "default"}
-                          size="sm"
-                        >
-                          {isPrimary && (
-                            <Sparkles className="w-3 h-3 mr-1 text-accent" />
-                          )}
-                          {project.badge}
-                        </Badge>
-                      )}
-                    </div>
-
-                    <p className="text-sm sm:text-base font-medium text-foreground/85">
-                      {project.tagline}
+              <div className="space-y-4">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground tracking-tight">
+                      {project.title}
+                    </h3>
+                    <p className="text-xs font-mono text-muted-foreground pt-1">
+                      {project.badge || "Project"}
                     </p>
                   </div>
 
-                  {/* External Links CTA */}
-                  <div className="flex items-center gap-2.5 self-start sm:self-auto">
+                  <div className="flex items-center gap-2">
                     {project.githubUrl && (
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label={`${project.title} GitHub Repository`}
+                        className="text-muted-foreground hover:text-foreground transition-colors p-1"
+                        aria-label={`${project.title} Source Code`}
+                        title="View Source Code"
                       >
-                        <Button
-                          variant="secondary"
-                          size="sm"
-                          className="gap-1.5 font-mono"
-                        >
-                          <Github className="w-3.5 h-3.5" />
-                          <span>Source Code</span>
-                        </Button>
+                        <Github className="w-4 h-4" />
                       </a>
                     )}
                     {project.liveUrl && (
@@ -165,73 +55,41 @@ export function Projects() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-foreground transition-colors p-1"
                         aria-label={`${project.title} Live Preview`}
+                        title="Live Preview"
                       >
-                        <Button
-                          variant="primary"
-                          size="sm"
-                          className="gap-1.5 font-mono"
-                        >
-                          <ExternalLink className="w-3.5 h-3.5" />
-                          <span>Live Demo</span>
-                        </Button>
+                        <ArrowUpRight className="w-4 h-4" />
                       </a>
                     )}
                   </div>
                 </div>
 
-                {/* Problem Solved Callout Box */}
+                <p className="text-sm text-foreground/80 leading-relaxed font-sans">
+                  {project.tagline}
+                </p>
+
                 {project.problemSolved && (
-                  <div className="p-4 rounded-xl bg-surface-hover/70 border border-surface-border/90 text-xs sm:text-sm">
-                    <div className="flex items-center gap-1.5 font-semibold text-accent font-mono uppercase tracking-wider text-[11px] mb-1.5">
-                      <Shield className="w-3.5 h-3.5" />
-                      <span>Problem & Solution Context</span>
-                    </div>
-                    <p className="text-foreground/85 leading-relaxed">
-                      {project.problemSolved}
-                    </p>
-                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed border-l-2 border-surface-border pl-3">
+                    {project.problemSolved}
+                  </p>
                 )}
-
-                {/* Key Features & Architecture Deliverables */}
-                {project.highlights && project.highlights.length > 0 && (
-                  <div className="space-y-2.5">
-                    <h4 className="text-xs font-mono uppercase tracking-wider text-muted-foreground font-semibold">
-                      Key Features & Technical Implementations:
-                    </h4>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {project.highlights.map((highlight, hIdx) => (
-                        <li
-                          key={hIdx}
-                          className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/80 leading-relaxed group"
-                        >
-                          <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* Tech Stack Chips */}
-                <div className="pt-4 border-t border-surface-border/60">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-[11px] font-mono text-muted-foreground mr-1 flex items-center gap-1">
-                      <Layers className="w-3.5 h-3.5 text-accent" />
-                      Tech:
-                    </span>
-                    {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="tech" size="sm">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
               </div>
-            </Card>
-          );
-        })}
+
+              <div className="pt-6 mt-6 border-t border-surface-border flex flex-wrap gap-1.5">
+                {project.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-[11px] font-mono px-2 py-0.5 rounded border border-surface-border bg-surface-hover/50 text-foreground/75"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
-    </SectionContainer>
+    </section>
   );
 }
