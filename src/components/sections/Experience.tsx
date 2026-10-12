@@ -1,90 +1,95 @@
-import { Calendar, MapPin, Building2, Check, ArrowUpRight, Sparkles, Terminal } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
-import { SectionContainer } from "../layout/SectionContainer";
-import { SectionHeading } from "../ui/SectionHeading";
-import { Card } from "../ui/Card";
-import { Badge } from "../ui/Badge";
 
 export function Experience() {
   return (
-    <SectionContainer id="experience" className="border-t border-surface-border/60">
-      <SectionHeading
-        eyebrow="Work History"
-        title="Professional Experience"
-        description="Engineering client-facing software applications with production-level reliability and strict quality standards."
-      />
+    <section id="experience" className="py-20 border-t border-surface-border">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="space-y-2 mb-12">
+          <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+            Career &amp; Education
+          </p>
+          <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+            Experience &amp; Background
+          </h2>
+          <p className="text-sm text-muted-foreground max-w-xl">
+            Engineering client-facing software applications and formal computer science university studies.
+          </p>
+        </div>
 
-      <div className="relative pl-6 sm:pl-8 border-l-2 border-surface-border/80 space-y-12 max-w-4xl">
-        {PORTFOLIO_DATA.experience.map((exp) => (
-          <div key={exp.id} className="relative group">
-            {/* Timeline Dot Indicator */}
-            <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-surface border-2 border-accent group-hover:scale-125 group-hover:bg-accent/20 transition-all duration-300 shadow-2xs" />
-
-            <Card hoverEffect className="relative bg-surface/80 border-surface-border p-6 sm:p-7 space-y-5">
-              {/* Header Details */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-surface-border/60">
-                <div className="space-y-1.5">
-                  <div className="flex flex-wrap items-center gap-2.5">
-                    <h3 className="font-bold text-lg sm:text-xl text-foreground tracking-tight">
+        <div className="space-y-8">
+          {/* Work Experience */}
+          {PORTFOLIO_DATA.experience.map((exp) => (
+            <div
+              key={exp.id}
+              className="rounded-xl border border-surface-border bg-surface p-6 sm:p-7 space-y-4 hover:border-foreground/30 transition-colors"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 pb-3 border-b border-surface-border">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h3 className="font-bold text-base sm:text-lg text-foreground">
                       {exp.role}
                     </h3>
-                    <Badge variant="accent" size="sm">
-                      {exp.workType}
-                    </Badge>
-                  </div>
-
-                  <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-muted-foreground">
-                    <span className="flex items-center gap-1.5 text-foreground font-semibold">
-                      <Building2 className="w-3.5 h-3.5 text-accent" />
-                      {exp.company}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5" />
-                      {exp.location}
+                    <span className="text-xs font-mono text-muted-foreground">
+                      &bull; {exp.company}
                     </span>
                   </div>
+                  <p className="text-xs font-mono text-muted-foreground pt-0.5">
+                    {exp.location} ({exp.workType})
+                  </p>
                 </div>
-
-                <div className="flex items-center gap-1.5 text-xs font-mono text-foreground/90 bg-surface/90 border border-surface-border px-3 py-1.5 rounded-lg self-start sm:self-auto shadow-2xs">
-                  <Calendar className="w-3.5 h-3.5 text-accent" />
-                  <span>{exp.period}</span>
-                </div>
+                <span className="text-xs font-mono text-muted-foreground sm:text-right">
+                  {exp.period}
+                </span>
               </div>
 
-              {/* Responsibilities & Impact */}
-              <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground font-semibold block">
-                  Key Responsibilities & Deliverables:
-                </span>
-                <ul className="space-y-2.5">
-                  {exp.description.map((item, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/80 leading-relaxed"
-                    >
-                      <Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <ul className="space-y-2 text-sm text-foreground/80 leading-relaxed list-disc list-inside">
+                {exp.description.map((item, idx) => (
+                  <li key={idx} className="pl-1">
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
 
-              {/* Technologies Applied */}
-              <div className="pt-4 border-t border-surface-border/60 flex flex-wrap items-center gap-2">
-                <span className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider mr-1 flex items-center gap-1">
-                  <Terminal className="w-3 h-3 text-accent" />
-                  Stack:
-                </span>
+              <div className="pt-2 flex flex-wrap gap-1.5">
                 {exp.technologies.map((tech) => (
-                  <Badge key={tech} variant="tech" size="sm">
+                  <span
+                    key={tech}
+                    className="text-[11px] font-mono px-2 py-0.5 rounded border border-surface-border bg-surface-hover/50 text-foreground/75"
+                  >
                     {tech}
-                  </Badge>
+                  </span>
                 ))}
               </div>
-            </Card>
-          </div>
-        ))}
+            </div>
+          ))}
+
+          {/* Academic Background */}
+          {PORTFOLIO_DATA.education.map((edu, idx) => (
+            <div
+              key={idx}
+              className="rounded-xl border border-surface-border bg-surface p-6 sm:p-7 space-y-3 hover:border-foreground/30 transition-colors"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 pb-3 border-b border-surface-border">
+                <div>
+                  <h3 className="font-bold text-base sm:text-lg text-foreground">
+                    {edu.degree}
+                  </h3>
+                  <p className="text-xs font-mono text-muted-foreground pt-0.5">
+                    {edu.institution} &bull; {edu.affiliation} ({edu.location})
+                  </p>
+                </div>
+                <span className="text-xs font-mono text-muted-foreground sm:text-right">
+                  {edu.period} ({edu.status})
+                </span>
+              </div>
+              <p className="text-sm text-foreground/80 leading-relaxed font-sans">
+                Core coursework in Data Structures &amp; Algorithms, Relational &amp; Distributed Database Systems, Software Engineering, Network Architecture, and Operating Systems.
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-    </SectionContainer>
+    </section>
   );
 }
