@@ -16,7 +16,7 @@ export function Projects() {
             Featured Projects
           </h2>
           <p className="text-sm text-muted-foreground max-w-xl">
-            A selection of production-grade mobile applications and backend services built with Flutter and Node/NestJS.
+            A selection of production-grade mobile applications, real-time architectures, and backend services built with Flutter, Spring Boot, and Node/NestJS.
           </p>
         </div>
 
