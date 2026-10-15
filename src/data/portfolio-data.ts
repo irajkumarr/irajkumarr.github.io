@@ -52,11 +52,11 @@ export const PORTFOLIO_DATA = {
     headline: "Full-Stack & Flutter Developer",
     subheadline:
       "Crafting scalable cross-platform mobile apps and high-performance backend systems with Clean Architecture.",
-    bio: "Full-Stack & Flutter Developer with hands-on experience building production-grade mobile applications and robust REST APIs. Strong background in Clean Architecture, state management (BLoC, Riverpod, Provider), JWT authentication, and cloud messaging. Pursuing B.Sc. CSIT at Tribhuvan University.",
+    bio: "Full-Stack & Flutter Developer with hands-on experience building production-grade mobile applications and robust backend services. Strong background in Clean Architecture, state management (BLoC, Riverpod, Provider), Spring Boot, Node.js, WebSockets, and Redis. Pursuing B.Sc. CSIT at Tribhuvan University.",
     email: "rajk.timalsina05@gmail.com",
     phone: "+977 9765033186",
-    location: "Hetauda / Kathmandu, Nepal",
-    domain: "https://www.rajkumartimalsina.me",
+    location: "Kathmandu / Hetauda, Nepal",
+    domain: "https://rajkumartimalsina.me",
     github: "https://github.com/irajkumarr",
     linkedin: "https://linkedin.com/in/irajkumarr",
     resumeUrl: "/resume.pdf",
@@ -67,17 +67,17 @@ export const PORTFOLIO_DATA = {
   about: {
     title: "Engineering reliable mobile apps & scalable backend architectures.",
     paragraphs: [
-      "I am a software developer with a deep focus on Flutter cross-platform mobile development and Node.js backend engineering. I enjoy architecting systems from first principles — applying Clean Architecture, strict state management patterns, and performant database indexing.",
-      "My industry experience includes developing client applications at Supreme IT Solutions and currently building production Flutter mobile features onsite at DevanaSoft Pvt. Ltd., applying BLoC/Cubit, integrating secure REST APIs via Dio, and implementing robust state workflows.",
-      "I am currently completing my Bachelor of Science in Computer Science and Information Technology (B.Sc. CSIT) at Birendra Multiple Campus, Tribhuvan University, deepening my understanding of data structures, algorithms, database systems, and distributed computing.",
+      "I am a software developer with a deep focus on Flutter cross-platform mobile development and backend engineering with Spring Boot and Node.js. I apply Clean Architecture, strict state management patterns, real-time WebSockets, and in-memory Redis caching.",
+      "My industry experience includes developing client applications at Supreme IT Solutions and currently building production Flutter mobile features onsite at DevanaSoft Pvt. Ltd., applying BLoC/Cubit, Hive offline caching, FVM, and robust state workflows.",
+      "I am currently completing my Bachelor of Science in Computer Science and Information Technology (B.Sc. CSIT) at Birendra Multiple Campus, Tribhuvan University (expected Dec 2026).",
     ],
     technicalStrengths: [
       "Clean Architecture & Separation of Concerns",
       "Advanced Flutter State Management (BLoC/Cubit, Riverpod, Provider)",
-      "Secure REST API & Microservice Design (Node.js, Express, Nest.js)",
-      "Database Architecture & Index Optimization (MongoDB, PostgreSQL)",
+      "Real-Time Systems (WebSockets, STOMP, Redis GEO)",
+      "Secure REST APIs (Spring Boot, Node.js, Express, Nest.js)",
+      "Database Architecture (MongoDB, PostgreSQL, Redis)",
       "Automated CI/CD Pipelines (GitHub Actions, Fastlane, Firebase App Distribution)",
-      "Real-time Push Notifications (Firebase Cloud Messaging)",
     ],
   },
 
@@ -86,23 +86,24 @@ export const PORTFOLIO_DATA = {
       id: "devanasoft",
       role: "Flutter Developer Intern",
       company: "DevanaSoft Pvt. Ltd.",
-      location: "Gatthaghar, Bhaktapur, Nepal",
+      location: "Kathmandu, Nepal",
       workType: "Onsite",
       period: "August 2026 – Present",
       startDate: "Aug 2026",
       endDate: "Present",
       current: true,
       description: [
-        "Developing production-ready cross-platform mobile features in Flutter with responsive UI and clean state management.",
-        "Collaborating onsite with senior engineers and QA to architect, implement, and maintain reliable mobile applications.",
-        "Integrating REST APIs and optimizing state workflows to deliver seamless user experiences.",
+        "Developing features for a production networking application using Flutter, Clean Architecture, and BLoC/Cubit.",
+        "Implemented local data persistence with Hive to keep core content accessible offline.",
+        "Worked with multi-flavor configurations for separate app environments and managed Flutter SDK versions using FVM.",
       ],
       technologies: [
         "Flutter",
         "Dart",
         "BLoC / Cubit",
-        "REST APIs",
+        "Hive",
         "Clean Architecture",
+        "FVM",
         "Git",
       ],
     },
@@ -117,9 +118,9 @@ export const PORTFOLIO_DATA = {
       endDate: "Apr 2026",
       current: false,
       description: [
-        "Built cross-platform Flutter features using Clean Architecture and BLoC/Cubit for 3+ client applications.",
-        "Collaborated with cross-functional teams and QA engineers to design, develop, and implement new features, ensuring high-quality releases.",
-        "Implemented JWT-based authentication and REST API integration with Dio, hardening app-level security.",
+        "Developed cross-platform Flutter features for 3+ client applications using Clean Architecture and BLoC/Cubit.",
+        "Integrated REST APIs using Dio and implemented JWT-based authentication flows.",
+        "Collaborated with QA engineers and cross-functional team members to build features, resolve issues, and support releases.",
       ],
       technologies: [
         "Flutter",
@@ -137,8 +138,37 @@ export const PORTFOLIO_DATA = {
 
   projects: [
     {
+      id: "ride-sharing-platform",
+      title: "Ride-Sharing Platform",
+      tagline:
+        "Full-stack real-time ride-sharing ecosystem with geospatial driver discovery and live tracking",
+      description:
+        "A full-stack ride-hailing system featuring separate rider and driver Flutter apps backed by a high-concurrency Spring Boot REST API and WebSockets.",
+      problemSolved:
+        "Solves live geospatial driver matching and stale driver tracking using Redis GEO and Redis Sorted Sets, with background GPS via native Android Foreground Services.",
+      highlights: [
+        "Built separate rider and driver Flutter applications backed by a Spring Boot REST API, implementing a state-driven ride lifecycle from request to completion.",
+        "Developed real-time driver matching using Redis GEO and WebSockets (STOMP), enabling geospatial driver discovery and live location tracking on the rider map.",
+        "Used Redis Sorted Sets to manage active drivers and detect stale driver entries.",
+        "Implemented continuous background GPS tracking using native Android Foreground Services and Firebase Cloud Messaging (FCM) for instant ride dispatch alerts.",
+      ],
+      technologies: [
+        "Flutter",
+        "Dart",
+        "Spring Boot",
+        "Redis",
+        "WebSockets",
+        "STOMP",
+        "Android Foreground Services",
+        "Firebase FCM",
+      ],
+      githubUrl: "https://github.com/irajkumarr/Ride_Share_Apps",
+      featured: true,
+      badge: "Real-Time / Full Stack",
+    },
+    {
       id: "learnify-elearning-app",
-      title: "Learnify - E-learning App",
+      title: "Learnify - E-learning Platform",
       tagline:
         "Full-stack mobile learning ecosystem with automated certification & payments",
       description:
@@ -193,17 +223,16 @@ export const PORTFOLIO_DATA = {
         "Passport",
         "REST API",
         "Pino",
-        "Event Emitter",
         "Scheduler",
         "Throttler",
       ],
       githubUrl: "https://github.com/irajkumarr/Task-Management-API",
       featured: true,
-      badge: "Featured Project",
+      badge: "Backend Engineering",
     },
     {
       id: "rojgari-job-seeker",
-      title: "Rojgari - Job Seeker Platform",
+      title: "Job Portal Application (Rojgari)",
       tagline:
         "High-performance job discovery & applicant matching mobile platform",
       description:
@@ -222,35 +251,15 @@ export const PORTFOLIO_DATA = {
         "Express",
         "MongoDB",
         "JWT",
-        "REST APIs",
+        "Provider",
       ],
       githubUrl: "https://github.com/irajkumarr/job-seeker-application",
       featured: true,
       badge: "Full Stack",
     },
     {
-      id: "kirana-grocery-shopping",
-      title: "Kirana - Grocery Shopping App",
-      tagline:
-        "Fast and intuitive grocery commerce app with category filtering and cart checkout",
-      description:
-        "A responsive mobile grocery shopping application providing instantaneous inventory exploration, category filtering, cart calculation, and streamlined order placement.",
-      problemSolved:
-        "Provides lightning-fast mobile catalog browsing with client-side caching and dynamic price estimation for everyday household essentials.",
-      highlights: [
-        "Built intuitive grocery product catalog with rapid category navigation and keyword search.",
-        "Implemented dynamic shopping cart with real-time subtotal, discount, and tax calculation.",
-        "Connected to a Node.js REST API with MongoDB for efficient product inventory querying.",
-        "Optimized mobile render performance and smooth page transitions with Flutter.",
-      ],
-      technologies: ["Flutter", "NodeJS", "MongoDB", "REST API"],
-      githubUrl: "https://github.com/irajkumarr/grocery-application",
-      featured: false,
-      badge: "Mobile Commerce",
-    },
-    {
       id: "chulesi-food-delivery",
-      title: "Chulesi - Food Delivery App",
+      title: "Food Delivery Application (Chulesi)",
       tagline:
         "End-to-end mobile ordering system with live tracking and promo logic",
       description:
@@ -258,53 +267,28 @@ export const PORTFOLIO_DATA = {
       problemSolved:
         "Streamlines user ordering workflows through modular backend API design, automated promo calculation, and real-time order delivery notifications.",
       highlights: [
-        "Designed modular REST APIs for order processing, promo logic, and restaurant ratings.",
+        "Designed modular REST APIs with Node.js, Express.js, and MongoDB for order processing, promo logic, and restaurant ratings.",
         "Built intuitive browsing, cart management, and secure checkout flows with JWT-authenticated user sessions.",
         "Enabled real-time order tracking and push notifications through Firebase Cloud Messaging (FCM).",
       ],
       technologies: [
         "Flutter",
         "NodeJS",
-        "MongoDB",
-        "Firebase Notifications",
         "Express",
+        "MongoDB",
+        "Firebase FCM",
+        "JWT",
       ],
       githubUrl:
         "https://github.com/irajkumarr/chulesi-foodDelivery-app-frontend",
       featured: false,
-      badge: "Food & Logistics",
-    },
-    {
-      id: "hostel-mate",
-      title: "HostelMate – Hostel Management System",
-      tagline:
-        "Digital hostel administration system for resident allocation, fees & notices",
-      description:
-        "A cross-platform mobile management solution for hostel administrators and residents to streamline room allocations, dues collection, meal schedules, and digital notices.",
-      problemSolved:
-        "Replaces manual paper ledgers with automated fee ledger tracking, digital complaints desk, and centralized broadcast announcements.",
-      highlights: [
-        "Designed room and bed allocation management module with occupancy rate indicators.",
-        "Implemented secure student records, monthly fee tracking, and billing invoice generation.",
-        "Engineered digital notice board with instant push alerts for hostel announcements and meal menus.",
-        "Built robust backend services with Node.js/Express and MongoDB validation schemas.",
-      ],
-      technologies: [
-        "Flutter",
-        "NodeJS",
-        "Express",
-        "MongoDB",
-        "Clean Architecture",
-      ],
-      githubUrl: "https://github.com/irajkumarr/hostel_management_app",
-      featured: false,
-      badge: "Management System",
+      badge: "Mobile & Backend",
     },
     {
       id: "service-on-wheels",
-      title: "ServiceOnWheels - Servicing & Maintenance App",
+      title: "ServiceOnWheels - Maintenance Platform",
       tagline:
-        "On-demand doorstep vehicle servicing and maintenance booking platform",
+        "Doorstep vehicle servicing and maintenance booking platform",
       description:
         "A full-stack mobile platform designed to schedule doorstep vehicle servicing, track service stage progression, and manage maintenance logs with real-time updates.",
       problemSolved:
@@ -317,7 +301,7 @@ export const PORTFOLIO_DATA = {
       ],
       technologies: ["Flutter", "NodeJS", "Express", "MongoDB", "REST APIs"],
       githubUrl: "https://github.com/irajkumarr/servicing_maintenance_app",
-      featured: true,
+      featured: false,
       badge: "Full Stack",
     },
   ] as ProjectItem[],
@@ -331,53 +315,56 @@ export const PORTFOLIO_DATA = {
         { name: "Dart", level: "Advanced" },
         { name: "JavaScript", level: "Advanced" },
         { name: "TypeScript", level: "Advanced" },
+        { name: "Java", level: "Proficient" },
       ],
     },
     {
-      category: "Frameworks & Libraries",
-      description: "Cross-platform mobile and backend application frameworks.",
+      category: "Mobile Development",
+      description: "Cross-platform mobile frameworks, state management, and native services.",
       skills: [
         { name: "Flutter", level: "Advanced" },
+        { name: "BLoC / Cubit", level: "Advanced" },
+        { name: "Riverpod", level: "Advanced" },
+        { name: "Provider", level: "Proficient" },
+        { name: "Hive (Offline)", level: "Proficient" },
+        { name: "Dio", level: "Advanced" },
+        { name: "Foreground Services", level: "Proficient" },
+      ],
+    },
+    {
+      category: "Backend & Real-Time",
+      description: "Scalable backend frameworks, microservices, and live communication.",
+      skills: [
+        { name: "Spring Boot", level: "Proficient" },
         { name: "Node.js", level: "Advanced" },
         { name: "Express.js", level: "Advanced" },
-        { name: "Nest.js", level: "Advanced" },
+        { name: "NestJS", level: "Advanced" },
+        { name: "WebSockets (STOMP)", level: "Proficient" },
+        { name: "RESTful APIs", level: "Advanced" },
       ],
     },
     {
       category: "Databases & Cloud",
       description:
-        "Relational, document, and real-time database management systems.",
+        "In-memory, document, relational, and real-time database management systems.",
       skills: [
+        { name: "Redis (GEO, Sorted Sets)", level: "Proficient" },
         { name: "MongoDB", level: "Advanced" },
         { name: "PostgreSQL", level: "Proficient" },
-        { name: "Firebase (Firestore)", level: "Advanced" },
+        { name: "Firebase (FCM, Firestore)", level: "Advanced" },
       ],
     },
     {
-      category: "Development Tools & CI/CD",
+      category: "DevOps, Tools & Architecture",
       description:
-        "Tooling for version control, testing, API design, and automated release pipelines.",
+        "Release automation, SDK version management, and architectural standards.",
       skills: [
+        { name: "Clean Architecture", level: "Advanced" },
         { name: "Git & GitHub", level: "Advanced" },
-        { name: "Postman", level: "Advanced" },
-        { name: "VS Code", level: "Advanced" },
-        { name: "Android Studio", level: "Advanced" },
         { name: "GitHub Actions", level: "Proficient" },
         { name: "Fastlane", level: "Proficient" },
-      ],
-    },
-    {
-      category: "Core Competencies & Architecture",
-      description:
-        "Architectural paradigms and software engineering best practices.",
-      skills: [
-        { name: "Clean Architecture" },
-        { name: "BLoC / Cubit" },
-        { name: "Riverpod" },
-        { name: "Provider" },
-        { name: "RESTful API Development" },
-        { name: "JWT / OAuth2 Security" },
-        { name: "Cross-Platform Development" },
+        { name: "FVM", level: "Proficient" },
+        { name: "Postman", level: "Advanced" },
       ],
     },
   ] as SkillCategory[],
@@ -389,18 +376,15 @@ export const PORTFOLIO_DATA = {
       institution: "Birendra Multiple Campus",
       affiliation: "Tribhuvan University",
       location: "Bharatpur, Chitwan, Nepal",
-      period: "2022 – Present",
+      period: "2022 – Expected December 2026",
       status: "In Progress",
     },
   ] as EducationItem[],
 
   navigation: [
-    { name: "About", href: "#about" },
-    { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
+    { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
-    { name: "Education", href: "#education" },
-    { name: "Resume", href: "#resume" },
     { name: "Contact", href: "#contact" },
   ],
 
