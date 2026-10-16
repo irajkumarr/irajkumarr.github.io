@@ -83,12 +83,12 @@ export function Hero() {
           <div className="shrink-0 self-start md:self-center">
             <div className="relative w-32 h-32 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full overflow-hidden border border-surface-border bg-surface shadow-sm">
               <Image
-                src="/raj-kumar-timalsina.webp"
+                src="/avatar-opt.webp"
                 alt="Raj Kumar Timalsina"
-                fill
+                width={208}
+                height={208}
                 priority
-                sizes="(max-width: 640px) 128px, (max-width: 768px) 176px, 208px"
-                className="object-cover object-top scale-[1.04]"
+                className="w-full h-full object-cover object-top scale-[1.04]"
               />
             </div>
           </div>
