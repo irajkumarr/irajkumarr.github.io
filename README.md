@@ -1,6 +1,6 @@
 # Raj Kumar Timalsina - Personal Portfolio Website
 
-Production-grade developer portfolio built with **Next.js 15 (App Router)**, **TypeScript**, **Tailwind CSS**, and **Lucide Icons**, configured for static export to **GitHub Pages** under custom domain [`rajkumartimalsina.me`](https://www.rajkumartimalsina.me).
+Production-grade developer portfolio built with **Next.js 15 (App Router)**, **TypeScript**, **Tailwind CSS**, and **Lucide Icons**, configured for static export to **GitHub Pages** under custom domain [`rajkumartimalsina.me`](https://rajkumartimalsina.me).
 
 ---
 
@@ -124,7 +124,7 @@ git commit -m "feat: build production portfolio with Next.js static export"
 git push origin main
 ```
 
-The GitHub Actions workflow will automatically run, build the static export, and deploy it to `https://www.rajkumartimalsina.me`.
+The GitHub Actions workflow will automatically run, build the static export, and deploy it to `https://rajkumartimalsina.me`.
 
 ---
 
