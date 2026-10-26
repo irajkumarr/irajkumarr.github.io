@@ -62,6 +62,9 @@ export const metadata: Metadata = {
     { name: PORTFOLIO_DATA.personal.name, url: PORTFOLIO_DATA.personal.domain },
   ],
   creator: PORTFOLIO_DATA.personal.name,
+  alternates: {
+    canonical: PORTFOLIO_DATA.personal.domain,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -111,12 +114,73 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${PORTFOLIO_DATA.personal.domain}/#person`,
+        name: PORTFOLIO_DATA.personal.name,
+        alternateName: ["Raj Kumar", "Raj K Timalsina"],
+        jobTitle: PORTFOLIO_DATA.personal.headline,
+        description: PORTFOLIO_DATA.personal.bio,
+        url: PORTFOLIO_DATA.personal.domain,
+        image: `${PORTFOLIO_DATA.personal.domain}/raj-kumar-timalsina.png`,
+        sameAs: [
+          PORTFOLIO_DATA.personal.github,
+          PORTFOLIO_DATA.personal.linkedin,
+          "https://x.com/irajkumarr_",
+        ],
+        worksFor: {
+          "@type": "Organization",
+          name: "DevanaSoft Pvt. Ltd.",
+        },
+        alumniOf: {
+          "@type": "CollegeOrUniversity",
+          name: "Tribhuvan University",
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Kathmandu",
+          addressCountry: "NP",
+        },
+        knowsAbout: [
+          "Flutter",
+          "Dart",
+          "Full-Stack Development",
+          "Clean Architecture",
+          "BLoC",
+          "Spring Boot",
+          "Node.js",
+          "REST APIs",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${PORTFOLIO_DATA.personal.domain}/#website`,
+        url: PORTFOLIO_DATA.personal.domain,
+        name: `${PORTFOLIO_DATA.personal.name} Portfolio`,
+        description: PORTFOLIO_DATA.personal.bio,
+        publisher: {
+          "@id": `${PORTFOLIO_DATA.personal.domain}/#person`,
+        },
+        inLanguage: "en-US",
+      },
+    ],
+  };
+
   return (
     <html
       lang="en"
       suppressHydrationWarning
       className={`${inter.variable} ${jetbrainsMono.variable} ${outfit.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen font-sans bg-background text-foreground antialiased selection:bg-accent selection:text-accent-foreground flex flex-col relative overflow-x-hidden">
         <script
           dangerouslySetInnerHTML={{
