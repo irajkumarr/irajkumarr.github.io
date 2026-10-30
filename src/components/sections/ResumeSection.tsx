@@ -123,7 +123,7 @@ export function ResumeSection() {
                       Flutter Developer Intern
                     </span>
                     <span className="text-xs font-mono text-emerald-500 font-medium">
-                      Aug 2026 – Present
+                      Aug 2026 – Oct 2026
                     </span>
                   </div>
                   <p className="text-xs text-accent font-mono font-medium">

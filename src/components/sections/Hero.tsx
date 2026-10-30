@@ -34,7 +34,7 @@ export function Hero() {
 
             {/* Concise Narrative */}
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-sans">
-              Building production-ready cross-platform mobile applications in Flutter and scalable real-time backend systems with Spring Boot, Node.js, Redis, and Clean Architecture. Engineering mobile features at DevanaSoft and completing B.Sc. CSIT at Tribhuvan University.
+              Building production-ready cross-platform mobile applications in Flutter and scalable real-time backend systems with Spring Boot, Node.js, Redis, and Clean Architecture. Completing B.Sc. CSIT at Tribhuvan University.
             </p>
 
             {/* Direct CTAs */}

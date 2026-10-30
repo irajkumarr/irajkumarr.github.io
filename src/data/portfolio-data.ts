@@ -88,9 +88,9 @@ export const PORTFOLIO_DATA = {
       company: "DevanaSoft Pvt. Ltd.",
       location: "Kathmandu, Nepal",
       workType: "Onsite",
-      period: "August 2026 – Present",
+      period: "August 2026 – October 2026",
       startDate: "Aug 2026",
-      endDate: "Present",
+      endDate: "Oct 2026",
       current: true,
       description: [
         "Developing features for a production networking application using Flutter, Clean Architecture, and BLoC/Cubit.",
@@ -287,8 +287,7 @@ export const PORTFOLIO_DATA = {
     {
       id: "service-on-wheels",
       title: "ServiceOnWheels - Maintenance Platform",
-      tagline:
-        "Doorstep vehicle servicing and maintenance booking platform",
+      tagline: "Doorstep vehicle servicing and maintenance booking platform",
       description:
         "A full-stack mobile platform designed to schedule doorstep vehicle servicing, track service stage progression, and manage maintenance logs with real-time updates.",
       problemSolved:
@@ -320,7 +319,8 @@ export const PORTFOLIO_DATA = {
     },
     {
       category: "Mobile Development",
-      description: "Cross-platform mobile frameworks, state management, and native services.",
+      description:
+        "Cross-platform mobile frameworks, state management, and native services.",
       skills: [
         { name: "Flutter", level: "Advanced" },
         { name: "BLoC / Cubit", level: "Advanced" },
@@ -333,7 +333,8 @@ export const PORTFOLIO_DATA = {
     },
     {
       category: "Backend & Real-Time",
-      description: "Scalable backend frameworks, microservices, and live communication.",
+      description:
+        "Scalable backend frameworks, microservices, and live communication.",
       skills: [
         { name: "Spring Boot", level: "Proficient" },
         { name: "Node.js", level: "Advanced" },
